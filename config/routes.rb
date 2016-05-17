@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  devise_for :admin
   get 'admin' => 'admin#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
