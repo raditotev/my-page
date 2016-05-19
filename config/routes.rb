@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  get 'about' => 'pages#about'
+  get 'portfolio' => 'pages#portfolio'
+  get 'blog' => 'pages#blog'
+  get 'contacts' => 'pages#contacts'
+
   devise_for :admin
   get 'admin' => 'admin#home'
 
