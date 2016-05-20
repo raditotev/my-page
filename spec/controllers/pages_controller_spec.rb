@@ -2,31 +2,35 @@ require 'spec_helper'
 
 describe PagesController do
 
-  describe "GET 'about'" do
+  describe ".about" do
     it "returns http success" do
-      get 'about'
-      response.should be_success
+      get :about
+      expect(response).to be_success
+      expect(response).to render_template(:about)
     end
   end
 
-  describe "GET 'portfolio'" do
+  describe ".portfolio" do
     it "returns http success" do
-      get 'portfolio'
-      response.should be_success
+      get :portfolio
+      expect(response).to be_success
+      expect(response).to render_template(:portfolio)
     end
   end
 
-  describe "GET 'blog'" do
+  describe ".blog" do
     it "returns http success" do
-      get 'blog'
-      response.should be_success
+      get :blog
+      expect(response).to be_success
+      expect(response).to render_template(:blog)
     end
   end
 
-  describe "GET 'contacts'" do
+  describe ".contacts'" do
     it "returns http success" do
-      get 'contacts'
-      response.should be_success
+      get :contacts
+      expect(response).to be_success
+      expect(response).to render_template(:contacts)
     end
   end
 
