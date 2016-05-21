@@ -6,11 +6,11 @@ RSpec.describe ProjectsController, type: :controller do
   # Project. As you add validations to Project, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    {title: "Valid title", description: "Some description in here..."}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {title: nil, description: nil}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -18,7 +18,19 @@ RSpec.describe ProjectsController, type: :controller do
   # ProjectsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
+  before :each do
+    @request.env["devise.mapping"] = Devise.mappings[:admin]
+    @admin = FactoryGirl.create :admin
+    sign_in @admin
+  end
+
   describe "GET #index" do
+
+    it "opens index page" do
+      get :index
+      expect(response).to render_template(:index)
+    end
+
     it "assigns all projects as @projects" do
       project = Project.create! valid_attributes
       get :index, {}, valid_session
@@ -27,14 +39,28 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "GET #show" do
+
     it "assigns the requested project as @project" do
       project = Project.create! valid_attributes
       get :show, {:id => project.to_param}, valid_session
       expect(assigns(:project)).to eq(project)
     end
+
+    it "opens index page" do
+      project = Project.create! valid_attributes
+      get :show, {:id => project.to_param}, valid_session
+      expect(response).to render_template(:show)
+    end
   end
 
   describe "GET #new" do
+
+    it "redirects to sign_in page if user not admin" do
+      sign_out @admin
+      get :new, {}, valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
     it "assigns a new project as @project" do
       get :new, {}, valid_session
       expect(assigns(:project)).to be_a_new(Project)
@@ -42,6 +68,14 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   describe "GET #edit" do
+
+    it "redirects to sign_in page if user not admin" do
+      sign_out @admin
+      project = Project.create! valid_attributes
+      get :edit, {:id => project.to_param}, valid_session
+      expect(response).to redirect_to new_admin_session_path
+    end
+
     it "assigns the requested project as @project" do
       project = Project.create! valid_attributes
       get :edit, {:id => project.to_param}, valid_session
@@ -85,14 +119,16 @@ RSpec.describe ProjectsController, type: :controller do
   describe "PUT #update" do
     context "with valid params" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {title: "New title", description: "New description"}
       }
 
       it "updates the requested project" do
         project = Project.create! valid_attributes
         put :update, {:id => project.to_param, :project => new_attributes}, valid_session
         project.reload
-        skip("Add assertions for updated state")
+        new_attributes.each_pair do |key, value|
+          expect(project[key]).to eq( value )
+        end
       end
 
       it "assigns the requested project as @project" do
