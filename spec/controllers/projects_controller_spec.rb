@@ -46,6 +46,13 @@ RSpec.describe ProjectsController, type: :controller do
       get :index, {}, valid_session
       expect(assigns(:projects)).to eq([project])
     end
+
+    it "displays most recent first" do
+      project1 = Project.create! valid_attributes
+      project2 = Project.create! valid_attributes
+      get :index, {}, valid_session
+      expect(assigns(:projects)).to eq([project2, project1])
+    end
   end
 
   describe "GET #show" do
