@@ -26,9 +26,19 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET #index" do
 
-    it "opens index page" do
-      get :index
-      expect(response).to render_template(:index)
+    context "for admin user" do
+      it "opens index page" do
+        get :index
+        expect(response).to render_template(:index)
+      end
+    end
+
+    context "for non-admin user" do
+      it "opens index page" do
+        sign_out @admin
+        get :index
+        expect(response).to render_template(:index)
+      end
     end
 
     it "assigns all projects as @projects" do
@@ -46,19 +56,40 @@ RSpec.describe ProjectsController, type: :controller do
       expect(assigns(:project)).to eq(project)
     end
 
-    it "opens index page" do
-      project = Project.create! valid_attributes
-      get :show, {:id => project.to_param}, valid_session
-      expect(response).to render_template(:show)
+    context "when admin user" do
+      it "opens show page" do
+        project = Project.create! valid_attributes
+        get :show, {:id => project.to_param}, valid_session
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context "when non-admin user" do
+      it "opens show page" do
+        sign_out @admin
+        project = Project.create! valid_attributes
+        get :show, {:id => project.to_param}, valid_session
+        expect(response).to render_template(:show)
+      end
     end
   end
 
   describe "GET #new" do
 
-    it "redirects to sign_in page if user not admin" do
-      sign_out @admin
-      get :new, {}, valid_session
-      expect(response).to redirect_to new_admin_session_path
+
+    context "when admin" do
+      it "opens new page" do
+        get :new, {}, valid_session
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context "when non-admin" do
+       it "redirects to sign_in page if user not admin" do
+        sign_out @admin
+        get :new, {}, valid_session
+        expect(response).to redirect_to new_admin_session_path
+      end
     end
 
     it "assigns a new project as @project" do
@@ -69,11 +100,21 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET #edit" do
 
-    it "redirects to sign_in page if user not admin" do
-      sign_out @admin
-      project = Project.create! valid_attributes
-      get :edit, {:id => project.to_param}, valid_session
-      expect(response).to redirect_to new_admin_session_path
+    context "when admin" do
+      it "opens edit page" do
+        project = Project.create! valid_attributes
+        get :edit, {:id => project.to_param}, valid_session
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context "when non-admin" do
+      it "redirects to sign_in page if user not admin" do
+        sign_out @admin
+        project = Project.create! valid_attributes
+        get :edit, {:id => project.to_param}, valid_session
+        expect(response).to redirect_to new_admin_session_path
+      end
     end
 
     it "assigns the requested project as @project" do
@@ -111,12 +152,13 @@ RSpec.describe ProjectsController, type: :controller do
 
       it "re-renders the 'new' template" do
         post :create, {:project => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
+        expect(response).to render_template(:new)
       end
     end
   end
 
   describe "PUT #update" do
+
     context "with valid params" do
       let(:new_attributes) {
         {title: "New title", description: "New description"}
