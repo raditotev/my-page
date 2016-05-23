@@ -39,4 +39,10 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Folder for test upload of statis files
+  config.paperclip_defaults = {
+    path: ':rails_root/test_uploads/:class/:id/:attachment/:filename.:extension',
+    url: ':rails_root/test_uploads/:class/:id/:attachment/:filename.:extension'
+  }
 end

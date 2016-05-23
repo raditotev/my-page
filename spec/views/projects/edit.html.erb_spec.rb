@@ -3,8 +3,7 @@ require 'spec_helper'
 RSpec.describe "projects/edit", type: :view do
   before(:each) do
     @project = assign(:project, Project.create!(
-      :title => "MyString",
-      :description => "MyText"
+      attributes_for(:project)
     ))
   end
 

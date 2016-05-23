@@ -15,5 +15,9 @@ RSpec.describe Project, type: :model do
     it "is invalid without descriprtio" do
       expect(build(:project, description: nil)).to_not be_valid
     end
+
+    it "is invalid without screenshot" do
+      expect(build(:project, screenshot: nil)).to_not be_valid
+    end
   end
 end

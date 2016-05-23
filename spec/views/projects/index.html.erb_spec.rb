@@ -4,19 +4,17 @@ RSpec.describe "projects/index", type: :view do
   before(:each) do
     assign(:projects, [
       Project.create!(
-        :title => "Title",
-        :description => "MyText"
+        attributes_for(:project)
       ),
       Project.create!(
-        :title => "Title",
-        :description => "MyText"
+        attributes_for(:project)
       )
     ])
   end
 
   it "renders a list of projects" do
     render
-    assert_select "tr>td", :text => "Title".to_s, :count => 2
+    assert_select "tr>td", :text => "MyTitle".to_s, :count => 2
     assert_select "tr>td", :text => "MyText".to_s, :count => 2
   end
 end

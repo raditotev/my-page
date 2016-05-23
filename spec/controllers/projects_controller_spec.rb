@@ -6,7 +6,7 @@ RSpec.describe ProjectsController, type: :controller do
   # Project. As you add validations to Project, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {title: "Valid title", description: "Some description in here..."}
+    attributes_for(:project)
   }
 
   let(:invalid_attributes) {

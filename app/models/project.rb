@@ -6,5 +6,5 @@ class Project < ActiveRecord::Base
   default_scope -> { order(created_at: :desc) }
   validates :title, presence: true
   validates :description, presence: true
-  # validates :screenshot, attachment_presence: true
+  validates :screenshot, attachment_presence: true
 end
