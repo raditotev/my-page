@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :posts
   resources :projects
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
