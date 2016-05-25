@@ -45,7 +45,7 @@ RSpec.describe PostsController, type: :controller do
       post1 = create(:post)
       post2 = create(:post, title: "Title1")
       get :index, {}, valid_session
-      expect(assigns(:projects)).to eq([post2, post1])
+      expect(assigns(:posts)).to eq([post2, post1])
     end
   end
 
