@@ -2,9 +2,6 @@ require 'spec_helper'
 
 RSpec.describe ProjectsController, type: :controller do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Project. As you add validations to Project, be sure to
-  # adjust the attributes here as well.
   let(:valid_attributes) {
     attributes_for(:project)
   }
@@ -13,9 +10,6 @@ RSpec.describe ProjectsController, type: :controller do
     {title: nil, description: nil}
   }
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # ProjectsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   before :each do
@@ -26,14 +20,14 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET #index" do
 
-    context "for admin user" do
+    context "when admin user" do
       it "opens index page" do
         get :index
         expect(response).to render_template(:index)
       end
     end
 
-    context "for non-admin user" do
+    context "when user not admin" do
       it "opens index page" do
         sign_out @admin
         get :index
@@ -71,7 +65,7 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
 
-    context "when non-admin user" do
+    context "when user not admin" do
       it "opens show page" do
         sign_out @admin
         project = Project.create! valid_attributes
@@ -83,15 +77,14 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET #new" do
 
-
-    context "when admin" do
+    context "when admin user" do
       it "opens new page" do
         get :new, {}, valid_session
         expect(response).to render_template(:new)
       end
     end
 
-    context "when non-admin" do
+    context "when user not admin" do
        it "redirects to sign_in page if user not admin" do
         sign_out @admin
         get :new, {}, valid_session
@@ -107,7 +100,7 @@ RSpec.describe ProjectsController, type: :controller do
 
   describe "GET #edit" do
 
-    context "when admin" do
+    context "when admin user" do
       it "opens edit page" do
         project = Project.create! valid_attributes
         get :edit, {:id => project.to_param}, valid_session
@@ -115,7 +108,7 @@ RSpec.describe ProjectsController, type: :controller do
       end
     end
 
-    context "when non-admin" do
+    context "when user not admin" do
       it "redirects to sign_in page if user not admin" do
         sign_out @admin
         project = Project.create! valid_attributes
