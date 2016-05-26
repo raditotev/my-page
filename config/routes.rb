@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
   get 'contacts' => 'pages#contacts'
-  get 'tags/:tag' => 'posts#index', as: "tag"
+  get 'tags/:tag' => 'posts#index', as: :tag
 
   devise_for :admin
   get 'admin' => 'admin#home'
