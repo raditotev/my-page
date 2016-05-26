@@ -9,7 +9,7 @@
 </p>
 <p>
     <strong>Tags</strong> <br>
-    <%= @post.all_tags %>
+    <%= raw tag_links(@post.all_tags) %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
