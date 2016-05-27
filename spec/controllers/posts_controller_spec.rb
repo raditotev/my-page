@@ -16,23 +16,14 @@ RSpec.describe PostsController, type: :controller do
     @request.env["devise.mapping"] = Devise.mappings[:admin]
     @admin = FactoryGirl.create :admin
     sign_in @admin
+    Post.destroy_all
   end
 
   describe "GET #index" do
 
-    context "when admin user" do
-      it "opens index page" do
-        get :index
-        expect(response).to render_template(:index)
-      end
-    end
-
-    context "when user not admin" do
-      it "opens index page" do
-        sign_out @admin
-        get :index
-        expect(response).to render_template(:index)
-      end
+    it "opens index page" do
+      get :index
+      expect(response).to render_template(:index)
     end
 
     it "assigns all posts as @posts" do
@@ -46,6 +37,19 @@ RSpec.describe PostsController, type: :controller do
       post2 = create(:post, title: "Title1")
       get :index, {}, valid_session
       expect(assigns(:posts)).to eq([post2, post1])
+    end
+
+    describe "when tag passed in params" do
+
+      it "returns posts with the same tag"do
+        post1 = create(:post, all_tags: "Tag")
+        post2 = create(:post, all_tags: "Different")
+        post3 = create(:post, all_tags: "Tag")
+        get :index, {tag: "Tag"}, valid_session
+        expect(assigns(:posts)).to eq([post3, post1])
+      end
+
+
     end
   end
 
