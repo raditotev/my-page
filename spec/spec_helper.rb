@@ -65,6 +65,9 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
 
+  config.include(Shoulda::Matchers::ActiveModel, type: :model)
+  config.include(Shoulda::Matchers::ActiveRecord, type: :model)
+
   config.after(:all) do
     if Rails.env.test?
       test_uploads = Dir["#{Rails.root}/test_uploads"]
