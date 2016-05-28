@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create, :destroy]
+  end
   resources :projects
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
