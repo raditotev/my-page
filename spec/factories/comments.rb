@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :comment do
-    author "MyString"
-    email "MyString"
-    content "MyString"
-    post nil
+    author "Author"
+    email "example@mail.com"
+    content "Content"
+    post
   end
 end
