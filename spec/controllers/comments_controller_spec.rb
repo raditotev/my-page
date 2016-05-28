@@ -42,4 +42,19 @@ RSpec.describe CommentsController, type: :controller do
       end
     end
   end
+
+  describe "DELETE #destroy" do
+    it "destroys the requested comment" do
+      comment = create(:comment, post_id: @post.id)
+      expect {
+        delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
+      }.to change(Comment, :count).by(-1)
+    end
+
+    it "redirects back to the posts" do
+      comment = create(:comment, post_id: @post.id)
+      delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
+      expect(response).to redirect_to @post
+    end
+  end
 end
