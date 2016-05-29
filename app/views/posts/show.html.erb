@@ -12,13 +12,15 @@
     <%= raw tag_links(@post.all_tags) %>
 </p>
 
-<%= render 'comments/form' %>
-
-<% @comments.each do |comment| %>
-
-  <%= render comment %>
-
+<% if @post.comments %>
+  <%= render 'comments/form' %>
 <% end %>
+
+
+<div id="comments">
+  <%= render @comments %>
+</div>
+
 
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

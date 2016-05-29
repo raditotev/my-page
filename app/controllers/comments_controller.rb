@@ -6,8 +6,10 @@ class CommentsController < ApplicationController
     @comment = @post.comments.build(comment_params)
 
     if @comment.save
-      flash[:success] = "Comment created"
-      redirect_to @post
+      respond_to do |format|
+        format.html { redirect_to @post, flash: { success: "Comment created" } }
+        format.js
+      end
     else
       flash[:alert] = "See the error message and try again."
       redirect_to @post
@@ -18,8 +20,10 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
 
     @comment.destroy
-    flash[:success] = "Comment was deleted"
-    redirect_to @post
+    respond_to do |format|
+      format.html { redirect_to @post, flash: { success: "Comment was deleted" } }
+      format.js
+    end
   end
 
   private
