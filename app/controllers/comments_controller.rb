@@ -1,28 +1,34 @@
 class CommentsController < ApplicationController
   before_action :authenticate_admin!
+  before_action :set_post
 
   def create
-    @comment = Comment.new(comment_params)
+    @comment = @post.comments.build(comment_params)
+
     if @comment.save
       flash[:success] = "Comment created"
-      redirect_to @comment.post
+      redirect_to @post
     else
-      post = Post.find(comment_params[:post_id])
-      flash[:error] = "See the error message and try again."
-      redirect_to post
+      flash[:alert] = "See the error message and try again."
+      redirect_to @post
     end
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    post = @comment.post
+    @comment = @post.comments.find(params[:id])
+
     @comment.destroy
-    redirect_to post
+    flash[:success] = "Comment was deleted"
+    redirect_to @post
   end
 
   private
 
+  def set_post
+    @post = Post.find(params[:post_id])
+  end
+
   def comment_params
-    params.require(:comment).permit(:author, :email, :content, :post_id)
+    params.require(:comment).permit(:author, :email, :content)
   end
 end
