@@ -55,27 +55,23 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #show" do
 
-    it "assigns the requested post as @post" do
+    it "opens show page" do
       post = create(:post)
       get :show, {:id => post.to_param}, valid_session
-      expect(assigns(:post)).to eq(post)
+      expect(response).to render_template(:show)
     end
 
-    context "when admin user" do
-      it "opens show page" do
-        post = create(:post)
-        get :show, {:id => post.to_param}, valid_session
-        expect(response).to render_template(:show)
-      end
+    it "assigns the post related comments as @comments" do
+      post = create(:post)
+      comment = post.comments.create(attributes_for(:comment))
+      get :show, {:id => post.to_param}, valid_session
+      expect(assigns(:comments)).to eq([comment])
     end
 
-    context "when user not admin" do
-      it "opens show page" do
-        sign_out @admin
-        post = create(:post)
-        get :show, {:id => post.to_param}, valid_session
-        expect(response).to render_template(:show)
-      end
+    it "assigns all posts as @posts" do
+      post = create(:post)
+      get :index, {}, valid_session
+      expect(assigns(:posts)).to eq([post])
     end
   end
 
