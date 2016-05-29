@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_admin!
+  before_action :authenticate_admin!, only: :destroy
   before_action :set_post
 
   def create

@@ -1,0 +1,6 @@
+  <% if comment.author && comment.author != "" %>
+    <strong><%= comment.author %></strong>
+  <% else %>
+    <strong>Anonimus</strong>
+  <% end %>
+  <p><%= comment.content %></p>

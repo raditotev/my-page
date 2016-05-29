@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>
-  <%= @post.title.html_safe %>
+  <%= @post.title %>
 </h1>
 
 <p>
@@ -11,6 +11,15 @@
     <strong>Tags</strong> <br>
     <%= raw tag_links(@post.all_tags) %>
 </p>
+
+<%= render 'comments/form' %>
+
+<% @comments.each do |comment| %>
+<div>
+  <%= render comment %>
+</div>
+<% end %>
+
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
