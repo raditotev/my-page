@@ -31,7 +31,7 @@ class PostsController < ApplicationController
       redirect_to @post
       flash[:success] = "Post was successfully created."
     else
-      flash.now[:error] = "Something went wrong, please try again."
+      flash.now[:alert] = "Something went wrong, please try again."
       render :new
     end
   end
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
       redirect_to @post
       flash[:success] = "Post was successfully updated."
     else
-      flash.now[:error] = "Check the form for errors and try again."
+      flash.now[:alert] = "Check the form for errors and try again."
       render :edit
     end
   end
