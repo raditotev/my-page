@@ -13,13 +13,19 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:valid_attributes) { attributes_for(:comment, post_id: @post.id) }
-    let(:invalid_attributes) { attributes_for(:comment, content: nil, post_id: @post.id) }
+    let(:valid_attributes) { attributes_for(:comment) }
+    let(:invalid_attributes) { attributes_for(:comment, content: nil) }
 
     context "with valid params" do
       it "creates a new comment" do
         expect {
           post :create, {post_id: @post.id, comment: valid_attributes}, valid_session
+        }.to change(Comment, :count).by(1)
+      end
+
+      it "creates new comment" do
+        expect {
+          post :create,{post_id: @post.id, comment: attributes_for(:comment), format: :js}, valid_session
         }.to change(Comment, :count).by(1)
       end
 
@@ -44,17 +50,38 @@ RSpec.describe CommentsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested comment" do
-      comment = create(:comment, post_id: @post.id)
-      expect {
-        delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
-      }.to change(Comment, :count).by(-1)
+
+    context "when user admin" do
+
+      before :each do
+        @comment = @post.comments.create(attributes_for(:comment))
+      end
+
+       it "destroys the requested comment" do
+        expect {
+          delete :destroy, {post_id: @post.id, id: @comment.to_param}, valid_session
+        }.to change(Comment, :count).by(-1)
+      end
+
+      it "redirects back to the posts" do
+        delete :destroy, {post_id: @post.id, id: @comment.to_param}, valid_session
+        expect(response).to redirect_to @post
+      end
+
+      it "responds to js" do
+        expect {
+          delete :destroy,{post_id: @post.id, id: @comment.to_param, format: :js}, valid_session
+        }.to change(Comment, :count).by(-1)
+      end
     end
 
-    it "redirects back to the posts" do
-      comment = create(:comment, post_id: @post.id)
-      delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
-      expect(response).to redirect_to @post
+    context "when user not admin" do
+      it "redirects to login page" do
+        sign_out @admin
+        comment = create(:comment)
+        delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
+        expect(response).to redirect_to new_admin_session_path
+      end
     end
   end
 end

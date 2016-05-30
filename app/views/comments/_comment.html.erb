@@ -6,6 +6,9 @@
     <strong>Anonimus</strong>
   <% end %>
   <p><%= comment.content %></p>
-  <%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  <% if current_admin %>
+    <%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
+  <% end %>
+
 </div>
 <% end %>

@@ -6,6 +6,7 @@ RSpec.describe "posts/show", type: :view do
       :title => "Title",
       :content => "MyText"
     ))
+    @comments = assign(:comments, @post.comments)
   end
 
   it "renders attributes in <p>" do
