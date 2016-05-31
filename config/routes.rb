@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'contacts' => 'pages#contacts'
   get 'tags/:tag' => 'posts#index', as: :tag
 
-  devise_for :admin
+  devise_for :admin, only: :sessions
+
   get 'admin' => 'admin#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
