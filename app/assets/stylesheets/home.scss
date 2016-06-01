@@ -20,12 +20,13 @@ $blue: #615391;
 }
 
 #side_nav{
-  .menu li a:hover{
-    background: #fff;
-  }
-  a{
-  font-size: 18px;
-  font-weight: bold;
+  .menu li a{
+    font-size: 18px;
+    font-weight: bold;
+    outline: 0;
+    &:hover{
+      background: #fff;
+    }
   }
 }
 
@@ -33,5 +34,11 @@ $blue: #615391;
   h2{
     color: $primary-color;
     font-weight: bold;
+  }
+  h3{
+    color: #000;
+  }
+  a{
+    color: #000;
   }
 }

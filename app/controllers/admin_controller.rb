@@ -2,8 +2,8 @@ class AdminController < ApplicationController
   before_action :authenticate_admin!
 
   def home
-    @projects = Project.all.reverse.last(3)
-    @posts = Post.all.reverse.last(3)
+    @projects = Project.last(7)
+    @posts = Post.last(7)
   end
 
   def projects

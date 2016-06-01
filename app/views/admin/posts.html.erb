@@ -1,0 +1,23 @@
+<%= render 'topbar' %>
+<div class="row" id="wrapper">
+  <!-- NAVIGATION -->
+  <div class="small-4 columns"  id="side_nav">
+    <%= render 'navbar' %>
+  </div>
+  <!-- MAIN -->
+  <div class="small-8 columns"  id="main">
+    <% @posts.each do |post| %>
+    <div class="row">
+      <div class="small-8 columns">
+        <h4><%= post.title %></h4>
+      </div>
+      <div class="small-4 columns">
+        <%= link_to "Show", post, target: "_blank" %>
+        <%= link_to "Edit", edit_post_path(post), target: "_blank" %>
+        <%= link_to "Delete", post, method: :delete, data: { confirm: "Are you sure?" } %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

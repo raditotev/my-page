@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   def destroy
     @post.destroy
-    redirect_to posts_path
+    redirect_to admin_posts_path
     flash[:success] = "Post was successfully destroyed."
   end
 

@@ -75,6 +75,10 @@ $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
 
+a:hover{
+  background: #fff;
+}
+
 // 2. Breakpoints
 // --------------
 
