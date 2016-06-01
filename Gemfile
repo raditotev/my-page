@@ -28,6 +28,9 @@ gem 'devise'
 gem "paperclip", "~> 5.0.0.beta1"
 # WYSIWYG
 gem "ckeditor"
+#Styling
+gem 'foundation-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

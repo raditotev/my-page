@@ -1,2 +1,51 @@
-<h1>Admin#home</h1>
-<p>Find me in app/views/admin/home.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h1>Admin Panel</h1>
+  </div>
+</div>
+
+<div class="row" id="wrapper">
+<!-- NAVIGATION -->
+  <div class="small-4 columns"  id="side_nav">
+    <ul class="vertical menu" data-accordion-menu>
+      <li>
+        <a href="#">Projects</a>
+        <ul class="menu vertical nested">
+          <li><a href="#">List</a></li>
+          <li><%= link_to "Create", new_project_path %></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Posts</a>
+        <ul class="menu vertical nested">
+          <li><a href="#">List</a></li>
+          <li><%= link_to "Create", new_post_path %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- MAIN -->
+  <div class="small-8 columns"  id="main">
+    <div class="row">
+      <div class="small-6 columns">
+      <h2>Projects</h2>
+        <div class="row">
+        <% @projects.each do |project| %>
+          <h3><%= project.title %></h3>
+          <p><%= project.description %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="small-6 columns">
+      <h2>Posts</h2>
+        <div class="row">
+          <% @posts.each do |post| %>
+          <h3><%= post.title %></h3>
+          <p><%= post.content.html_safe %></p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

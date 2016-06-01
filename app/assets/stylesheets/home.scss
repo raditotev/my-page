@@ -1,0 +1,37 @@
+@import "settings";
+
+
+$light_yellow: #D3CF6D;
+$green: #98C063;
+$navy: #42807E;
+$red: #D38A6D;
+$white: #fefefe;
+$blue: #615391;
+
+.container{
+  background: $blue;
+  h1 {
+  color: $white;
+  }
+}
+
+#wrapper{
+  margin-top: 20px;
+}
+
+#side_nav{
+  .menu li a:hover{
+    background: #fff;
+  }
+  a{
+  font-size: 18px;
+  font-weight: bold;
+  }
+}
+
+#main{
+  h2{
+    color: $primary-color;
+    font-weight: bold;
+  }
+}
