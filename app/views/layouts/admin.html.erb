@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "My Blog" %></title>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+    <h1><%= link_to "Admin Panel", admin_path %></h1>
+    </div>
+  </div>
+  <div class="row" id="wrapper">
+    <!-- NAVIGATION -->
+    <div class="small-4 columns"  id="side_nav">
+      <ul class="vertical menu" data-accordion-menu>
+        <li>
+          <a href="#">Projects</a>
+          <ul class="menu vertical nested">
+            <li><%= link_to "List", admin_projects_path %></li>
+            <li><%= link_to "Create", new_project_path %></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Posts</a>
+          <ul class="menu vertical nested">
+            <li><%= link_to "List", admin_posts_path %></li>
+            <li><%= link_to "Create", new_post_path %></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div>
+    <!-- MAIN -->
+    <div class="small-8 columns"  id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

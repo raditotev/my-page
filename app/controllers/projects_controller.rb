@@ -48,7 +48,7 @@ class ProjectsController < ApplicationController
   # DELETE /projects/1
   def destroy
     @project.destroy
-    redirect_to projects_path
+    redirect_to admin_projects_path
     flash[:success] = "Project was successfully destroyed."
   end
 

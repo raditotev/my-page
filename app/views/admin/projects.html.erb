@@ -1,0 +1,12 @@
+<% @projects.each do |project| %>
+<div class="row">
+  <div class="small-8 columns">
+    <h4><%= project.title %></h4>
+  </div>
+  <div class="small-4 columns">
+    <%= link_to "Show", project, target: "_blank" %>
+    <%= link_to "Edit", edit_project_path(project), target: "_blank" %>
+    <%= link_to "Delete", project, method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
+<% end %>

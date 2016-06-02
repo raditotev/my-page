@@ -75,8 +75,12 @@ $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
 
-a:hover{
-  background: #fff;
+// ** My global settings
+a{
+  color: #000;
+  &:hover{
+    background-color: transparent;
+  }
 }
 
 // 2. Breakpoints
