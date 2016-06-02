@@ -83,6 +83,10 @@ a{
   }
 }
 
+@each $name, $color in $foundation-palette {
+  .text-color-#{$name} { color:$color !important; }
+}
+
 // 2. Breakpoints
 // --------------
 

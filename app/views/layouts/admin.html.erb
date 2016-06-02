@@ -21,19 +21,17 @@
   <div class="row" id="wrapper">
     <!-- NAVIGATION -->
     <div class="small-4 columns"  id="side_nav">
-      <ul class="vertical menu" data-accordion-menu>
+      <ul class="vertical menu">
         <li>
-          <a href="#">Projects</a>
+          <%= link_to "Projects", admin_projects_path %>
           <ul class="menu vertical nested">
-            <li><%= link_to "List", admin_projects_path %></li>
-            <li><%= link_to "Create", new_project_path %></li>
+            <li><%= link_to "New", new_project_path, class: "text-color-success" %></li>
           </ul>
         </li>
         <li>
-          <a href="#">Posts</a>
+          <%= link_to "Posts", admin_posts_path %>
           <ul class="menu vertical nested">
-            <li><%= link_to "List", admin_posts_path %></li>
-            <li><%= link_to "Create", new_post_path %></li>
+            <li><%= link_to "New", new_post_path, class: "text-color-success" %></li>
           </ul>
         </li>
       </ul>

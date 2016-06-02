@@ -27,7 +27,8 @@ $light_orange: #AA5F39;
     font-weight: bold;
     outline: 0;
     &:hover{
-      background: #fff;
+      background: transparent;
+      color: $blue;
     }
   }
 }
