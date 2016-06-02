@@ -212,7 +212,7 @@ RSpec.describe ProjectsController, type: :controller do
     it "redirects to the projects list" do
       project = Project.create! valid_attributes
       delete :destroy, {:id => project.to_param}, valid_session
-      expect(response).to redirect_to(projects_url)
+      expect(response).to redirect_to admin_projects_path
     end
   end
 

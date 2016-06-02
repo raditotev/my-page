@@ -218,7 +218,7 @@ RSpec.describe PostsController, type: :controller do
     it "redirects to the posts list" do
       post = create(:post)
       delete :destroy, {id: post.to_param}, valid_session
-      expect(response).to redirect_to(posts_url)
+      expect(response).to redirect_to admin_posts_path
     end
   end
 
