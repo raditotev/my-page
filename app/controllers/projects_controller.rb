@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  layout 'admin', only: [:new, :edit]
 
   # GET /projects
   def index
