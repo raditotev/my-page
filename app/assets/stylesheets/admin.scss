@@ -2,11 +2,13 @@
 
 
 $light_yellow: #D3CF6D;
+$yellow: #FFB514;
 $green: #98C063;
 $navy: #42807E;
 $red: #D38A6D;
 $white: #fefefe;
 $blue: #615391;
+$light_orange: #AA5F39;
 
 .container{
   background: $blue;
@@ -38,6 +40,29 @@ $blue: #615391;
   h3{
     a{
       color: #000;
+    }
+  }
+  .controls{
+    a{
+      margin: 0 3px;
+    }
+    .fa-eye{
+      color: darken($blue, 20%);
+      &:hover{
+        color: $blue;
+      }
+    }
+    .fa-pencil{
+      color: $light_yellow;
+      &:hover{
+        color: $yellow;
+      }
+    }
+    .fa-trash{
+      color: $red;
+      &:hover{
+        color: red;
+      }
     }
   }
 }
