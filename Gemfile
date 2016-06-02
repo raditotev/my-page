@@ -30,6 +30,7 @@ gem "paperclip", "~> 5.0.0.beta1"
 gem "ckeditor"
 #Styling
 gem 'foundation-rails'
+gem "font-awesome-rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
