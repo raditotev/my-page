@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    title "Title"
-    content "Text"
+    title "Post Title"
+    content "Post Text"
   end
 end
