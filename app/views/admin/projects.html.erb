@@ -4,9 +4,9 @@
     <h4><%= project.title %></h4>
   </div>
   <div class="small-4 columns controls">
-    <%= link_to fa_icon("eye 2x"), project, target: "_blank" %>
-    <%= link_to fa_icon("pencil 2x"), edit_project_path(project), target: "_blank" %>
-    <%= link_to fa_icon("trash 2x"), project, method: :delete, data: { confirm: "Are you sure?" } %>
+    <%= link_to fa_icon("eye 2x"), project, target: "_blank", title: "Show" %>
+    <%= link_to fa_icon("pencil 2x"), edit_project_path(project), target: "_blank", title: "Edit" %>
+    <%= link_to fa_icon("trash 2x"), project, title: "Delete", method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
 </div>
 <% end %>
