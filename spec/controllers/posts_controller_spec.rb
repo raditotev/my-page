@@ -2,14 +2,6 @@ require 'spec_helper'
 
 RSpec.describe PostsController, type: :controller do
 
-  # let(:valid_attributes) {
-  #   attributes_for(:post)
-  # }
-
-  # let(:invalid_attributes) {
-  #   {title: nil, content: nil}
-  # }
-
   let(:valid_session) { {} }
 
   before :each do
