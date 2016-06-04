@@ -18,7 +18,7 @@ end
     expect(current_path).to eq(project_path(@project))
   end
 
-  scenario "has link to project show page" do
+  scenario "has link to project edit page" do
     click_link 'Edit'
     expect(current_path).to eq(edit_project_path(@project))
   end
