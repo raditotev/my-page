@@ -8,12 +8,17 @@ before :each do
   visit admin_projects_path
 end
 
-  scenario "links to project show page" do
+  scenario "redirects to home when Admin Panel is clicked" do
+    click_link 'Dashboard'
+    expect(current_path).to eq(admin_path)
+  end
+
+  scenario "has link to project show page" do
     click_link 'Show'
     expect(current_path).to eq(project_path(@project))
   end
 
-  scenario "links to project show page" do
+  scenario "has link to project show page" do
     click_link 'Edit'
     expect(current_path).to eq(edit_project_path(@project))
   end

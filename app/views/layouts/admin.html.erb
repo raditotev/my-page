@@ -15,7 +15,7 @@
 
   <div class="container">
     <div class="row">
-    <h1><%= link_to "Admin Panel", admin_path %></h1>
+    <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
     </div>
   </div>
   <div class="row" id="wrapper">
@@ -25,13 +25,13 @@
         <li>
           <%= link_to "Projects", admin_projects_path %>
           <ul class="menu vertical nested">
-            <li><%= link_to "New", new_project_path, class: "text-color-success", id: "new-project-link" %></li>
+            <li><%= link_to "New", new_project_path, class: "text-color-success", title: "Create project" %></li>
           </ul>
         </li>
         <li>
           <%= link_to "Posts", admin_posts_path %>
           <ul class="menu vertical nested">
-            <li><%= link_to "New", new_post_path, class: "text-color-success", id: "new-post-link" %></li>
+            <li><%= link_to "New", new_post_path, class: "text-color-success", title: "Create post" %></li>
           </ul>
         </li>
       </ul>
