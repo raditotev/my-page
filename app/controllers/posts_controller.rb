@@ -41,8 +41,8 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   def update
     if @post.update(post_params)
-      redirect_to @post
       flash[:success] = "Post was successfully updated."
+      redirect_to @post
     else
       flash.now[:alert] = "Check the form for errors and try again."
       render :edit

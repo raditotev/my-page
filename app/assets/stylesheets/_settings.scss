@@ -85,6 +85,14 @@ a{
   }
 }
 
+.alert-success{
+  color: green;
+}
+
+.alert-error{
+  color: red;
+}
+
 @each $name, $color in $foundation-palette {
   .text-color-#{$name} { color:$color !important; }
 }
