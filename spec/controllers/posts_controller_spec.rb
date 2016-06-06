@@ -11,6 +11,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET #index" do
+    let(:post){ create(:post) }
 
     it "opens index page" do
       get :index
@@ -18,7 +19,6 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "assigns all posts as @posts" do
-      post = create(:post)
       get :index, {}, valid_session
       expect(assigns(:posts)).to eq([post])
     end
@@ -45,22 +45,20 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "GET #show" do
+    let(:post){ create(:post) }
 
     it "opens show page" do
-      post = create(:post)
       get :show, {:id => post.to_param}, valid_session
       expect(response).to render_template(:show)
     end
 
     it "assigns the post related comments as @comments" do
-      post = create(:post)
       comment = post.comments.create(attributes_for(:comment))
       get :show, {:id => post.to_param}, valid_session
       expect(assigns(:comments)).to eq([comment])
     end
 
     it "assigns all posts as @posts" do
-      post = create(:post)
       get :index, {}, valid_session
       expect(assigns(:posts)).to eq([post])
     end
@@ -68,48 +66,53 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #new" do
 
+    before :each do
+      get :new, {}, valid_session
+    end
+
+    subject { response }
+
     context "when admin user" do
-      it "opens new page" do
-        get :new, {}, valid_session
-        expect(response).to render_template(:new)
-      end
+
+      it {is_expected.to render_template :new}
     end
 
     context "when user not admin" do
-       it "redirects to sign_in page if user not admin" do
+      before do
         sign_out @admin
         get :new, {}, valid_session
-        expect(response).to redirect_to new_admin_session_path
       end
+      it {is_expected.to redirect_to new_admin_session_path}
     end
 
     it "assigns a new post as @post" do
-      get :new, {}, valid_session
       expect(assigns(:post)).to be_a_new(Post)
     end
   end
 
   describe "GET #edit" do
+    let(:post){ create(:post) }
+    subject{ response }
 
     context "when admin user" do
-      it "opens edit page" do
-        post = create(:post)
+      before do
         get :edit, {id: post.to_param}, valid_session
-        expect(response).to render_template(:edit)
       end
+
+      it{ is_expected.to render_template(:edit)}
     end
 
     context "when user not admin" do
-      it "redirects to sign_in page if user not admin" do
+      before do
         sign_out @admin
-        project = create(:post)
-        get :edit, {id: project.to_param}, valid_session
-        expect(response).to redirect_to new_admin_session_path
+        get :edit, {id: post.to_param}, valid_session
       end
+
+      it{ is_expected.to redirect_to new_admin_session_path }
     end
 
     it "assigns the requested project as @project" do
-      post = create(:post)
+
       get :edit, {id: post.to_param}, valid_session
       expect(assigns(:post)).to eq(post)
     end
@@ -155,9 +158,9 @@ RSpec.describe PostsController, type: :controller do
       let(:new_attributes) {
         {title: "Title 1", content: "Text 1"}
       }
+      let(:post){ create(:post) }
 
       it "updates the requested post" do
-        post = create(:post)
         put :update, {id: post.to_param, post: new_attributes}, valid_session
         post.reload
         new_attributes.each_pair do |key, value|
@@ -166,39 +169,34 @@ RSpec.describe PostsController, type: :controller do
       end
 
       it "updates the post related tags" do
-        post = create(:post)
         put :update, {id: post.to_param, post: {all_tags: "New"}}, valid_session
         post.reload
         expect(post.all_tags).to eq("New")
       end
 
       it "assigns the requested post as @post" do
-        post = create(:post)
         put :update, {id: post.to_param, post: attributes_for(:post)}, valid_session
         expect(assigns(:post)).to eq(post)
       end
 
       it "redirects to the post" do
-        post = create(:post)
         put :update, {id: post.to_param, post: attributes_for(:post)}, valid_session
         expect(response).to redirect_to(post)
       end
     end
 
     context "with invalid params" do
-
       let(:invalid_attributes) {
         {title: nil, content: nil}
       }
+      let(:post){ create(:post) }
 
       it "assigns the post as @post" do
-        post = create(:post)
         put :update, {id: post.to_param, post: invalid_attributes}, valid_session
         expect(assigns(:post)).to eq(post)
       end
 
       it "re-renders the 'edit' template" do
-        post = create(:post)
         put :update, {id: post.to_param, post: invalid_attributes}, valid_session
         expect(response).to render_template("edit")
       end
@@ -206,6 +204,7 @@ RSpec.describe PostsController, type: :controller do
   end
 
   describe "DELETE #destroy" do
+
     it "destroys the requested post" do
       post = create(:post)
       expect {

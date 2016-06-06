@@ -1,37 +1,35 @@
 require 'spec_helper'
 
-describe PagesController do
+RSpec.describe PagesController, type: :controller do
+
+  subject { response }
 
   describe ".about" do
-    it "returns http success" do
-      get :about
-      expect(response).to be_success
-      expect(response).to render_template(:about)
-    end
+    before {get :about}
+
+    it {is_expected.to be_success}
+    it {is_expected.to render_template :about}
   end
 
   describe ".portfolio" do
-    it "returns http success" do
-      get :portfolio
-      expect(response).to be_success
-      expect(response).to render_template(:portfolio)
-    end
+    before {get :portfolio}
+
+    it {is_expected.to be_success}
+    it {is_expected.to render_template :portfolio}
   end
 
   describe ".blog" do
-    it "returns http success" do
-      get :blog
-      expect(response).to be_success
-      expect(response).to render_template(:blog)
-    end
+    before {get :blog}
+
+    it {is_expected.to be_success}
+    it {is_expected.to render_template :blog}
   end
 
   describe ".contacts'" do
-    it "returns http success" do
-      get :contacts
-      expect(response).to be_success
-      expect(response).to render_template(:contacts)
-    end
+    before {get :contacts}
+
+    it {is_expected.to be_success}
+    it {is_expected.to render_template :contacts}
   end
 
 end
