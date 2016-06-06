@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to admin_posts_path
-    flash[:success] = "Post was successfully destroyed."
+    flash[:success] = "Post was successfully deleted."
   end
 
   private
