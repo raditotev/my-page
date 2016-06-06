@@ -8,7 +8,6 @@ RSpec.describe PostsController, type: :controller do
     @request.env["devise.mapping"] = Devise.mappings[:admin]
     @admin = FactoryGirl.create :admin
     sign_in @admin
-    Post.destroy_all
   end
 
   describe "GET #index" do
@@ -121,7 +120,7 @@ RSpec.describe PostsController, type: :controller do
     context "with valid params" do
       it "creates a new Post" do
         expect {
-          post :create, {post: attributes_for(:post)}, valid_session
+          post :create, {post: attributes_for(:post, all_tags: create(:tag))}, valid_session
         }.to change(Post, :count).by(1)
       end
 
@@ -164,6 +163,13 @@ RSpec.describe PostsController, type: :controller do
         new_attributes.each_pair do |key, value|
           expect(post[key]).to eq( value )
         end
+      end
+
+      it "updates the post related tags" do
+        post = create(:post)
+        put :update, {id: post.to_param, post: {all_tags: "New"}}, valid_session
+        post.reload
+        expect(post.all_tags).to eq("New")
       end
 
       it "assigns the requested post as @post" do
