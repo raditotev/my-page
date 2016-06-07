@@ -36,7 +36,7 @@ RSpec.describe PostsController, type: :controller do
         post1 = create(:post, all_tags: "Tag")
         post2 = create(:post, all_tags: "Different")
         post3 = create(:post, all_tags: "Tag")
-        get :index, {tag: "Tag"}, valid_session
+        get :index, {tag: "TAG"}, valid_session
         expect(assigns(:posts)).to eq([post3, post1])
       end
 
@@ -171,7 +171,7 @@ RSpec.describe PostsController, type: :controller do
       it "updates the post related tags" do
         put :update, {id: post.to_param, post: {all_tags: "New"}}, valid_session
         post.reload
-        expect(post.all_tags).to eq("New")
+        expect(post.all_tags).to eq("NEW")
       end
 
       it "assigns the requested post as @post" do

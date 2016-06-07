@@ -24,7 +24,7 @@ RSpec.describe Post, type: :model do
 
     it "returns tags capitalized in a string" do
       post = Post.create(title: "Title", content: "Text", all_tags: "tag1, tag2")
-      expect(post.all_tags).to eq("Tag1, Tag2")
+      expect(post.all_tags).to eq("TAG1, TAG2")
     end
   end
 
@@ -33,9 +33,9 @@ RSpec.describe Post, type: :model do
     it "returns list of posts with same tag name" do
       Post.destroy_all
       Post.create(title: "Title1", content: "Text1", all_tags: "Tag")
-      expect(Post.tagged_with("Tag").count).to eq 1
+      expect(Post.tagged_with("TAG").count).to eq 1
       Post.create(title: "Title2", content: "Text2", all_tags: "Tag")
-      expect(Post.tagged_with("Tag").map{|post| post.title}.join(", ")).to eq "Title2, Title1"
+      expect(Post.tagged_with("TAG").map{|post| post.title}.join(", ")).to eq "Title2, Title1"
     end
   end
 end

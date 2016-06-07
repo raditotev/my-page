@@ -10,7 +10,7 @@ class Post < ActiveRecord::Base
 
   def all_tags=(names)
       self.tags = names.split(",").map do |name|
-        Tag.where(name: name.strip.capitalize).first_or_create!
+        Tag.where(name: name.strip.upcase).first_or_create!
     end
   end
 
