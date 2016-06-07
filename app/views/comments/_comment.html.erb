@@ -1,14 +1,9 @@
 <% if comment.valid? %>
 <div id="comment-#{comment.id}">
-  <% if comment.author && comment.author != "" %>
-    <strong><%= comment.author %></strong>
-  <% else %>
-    <strong>Anonimus</strong>
+  <strong><%= comment.author %></strong>
+  <% if current_admin %>
+    <span class="float-right"><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %></span>
   <% end %>
   <p><%= comment.content %></p>
-  <% if current_admin %>
-    <%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
-  <% end %>
-
 </div>
 <% end %>

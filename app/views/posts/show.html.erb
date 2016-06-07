@@ -1,27 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div id="show-post">
+  <div class="row">
+    <div class="small-8 small-centered">
+      <h1 class="text-center"><%= @post.title %></h1>
+      <p>
+        <%= @post.content.html_safe %>
+      </p>
+      <p>
+        <strong>Tags</strong> <br>
+        <%= raw tag_links(@post.all_tags) %>
+      </p>
+      <div id="comments_form">
+        <h5>Comments</h5>
+        <hr>
+        <%= render 'comments/form' %>
+      </div>
 
-<h1>
-  <%= @post.title %>
-</h1>
-
-<p>
-  <%= @post.content.html_safe %>
-</p>
-<p>
-    <strong>Tags</strong> <br>
-    <%= raw tag_links(@post.all_tags) %>
-</p>
-
-<% if @post.comments %>
-  <%= render 'comments/form' %>
-<% end %>
 
 
-<div id="comments">
-  <%= render @comments %>
+      <div id="comments">
+        <%= render @comments %>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

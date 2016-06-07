@@ -1,17 +1,15 @@
 <%= form_for([@post, @post.comments.new], remote: true) do |f| %>
   <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author, id: "form-comment-author" %>
+    <%= f.text_field :author, id: "form-comment-author", placeholder: "Your name (optional)" %>
   </div>
   <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, id: "form-comment-email" %>
+    <%= f.text_field :email, id: "form-comment-email", placeholder: "Your email (optional/ visible fo the admin only)" %>
   </div>
   <div class="field">
-    <%= f.label :content %><br>
+    <%= f.label "Your comment" %><br>
     <%= f.text_area :content, id:"form-comment-content" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Leave comment", class: "button" %>
   </div>
 <% end %>
