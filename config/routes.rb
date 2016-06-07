@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get 'admin/projects' => 'admin#projects'
   get 'admin/posts' => 'admin#posts'
 
+  root "posts#index"
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,29 +1,17 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center">Blog</h1>
 
-<h1>Listing Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title.html_safe %></td>
-        <td><%= post.content.html_safe %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<div class="row">
+  <% @posts.each do |post| %>
+  <div class="small-10 small-centered medium-6 medium-centered">
+    <h3><%= post.title %></h3>
+    <div class="row">
+      <div class="small-12 medium-4 columns">
+      <p><%= post.created_at.strftime("%e %B, %Y") %></p>
+     </div>
+     <div class="small-12 medium-8 columns">
+      <p><%= raw tag_links(post.all_tags) %></p>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
