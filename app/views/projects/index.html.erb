@@ -1,29 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<div class="row" id="projects-index">
+  <h1 class="text-center">Projects</h1>
+  <% @projects.each do |project| %>
+  <div class="small-10 small-centered medium-6 medium-centered">
+    <h3><%= link_to project.title, project %></h3>
+    <p><%= image_tag project.screenshot.url %></p>
+    <p><%= get_first_sentence project %></p>
+</div>
+<% end %>
+</div>
