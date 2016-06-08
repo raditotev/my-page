@@ -8,9 +8,11 @@ feature "Create comment" do
   end
 
   scenario "with valid details", js: true do
+    expect(page).to have_button 'Leave comment', disabled: true
     fill_in 'comment[author]', with: 'John'
     fill_in 'comment[email]', with: 'john@mail.com'
     fill_in 'comment[content]', with: 'This is a comment.'
+    expect(page).to have_button 'Leave comment', disabled: false
     click_on 'Leave comment'
     wait_for_ajax
     expect(page).to have_css "strong", text: "John"
@@ -18,8 +20,9 @@ feature "Create comment" do
   end
 
   scenario "with present content but missing author", js: true do
-    # fill_in 'comment[author]', with: ''
+    expect(page).to have_button 'Leave comment', disabled: true
     fill_in 'comment[content]', with: 'This is a comment.'
+    expect(page).to have_button 'Leave comment', disabled: false
     click_on 'Leave comment'
     wait_for_ajax
     expect(page).to have_css "strong", text: "Anonymous"
@@ -27,9 +30,7 @@ feature "Create comment" do
   end
 
   scenario "with invalid details", js: true do
-    click_on 'Leave comment'
-    wait_for_ajax
-    expect(page).to have_css ".alert-error", text: "Please leave comment."
+    expect(page).to have_button 'Leave comment', disabled: true
   end
 
 end
