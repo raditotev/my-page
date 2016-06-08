@@ -1,7 +1,7 @@
 <% @posts.each do |post| %>
 <div class="row">
   <div class="small-8 columns">
-    <h4><%= post.title %></h4>
+    <h4><%= link_to post.title, post %></h4>
   </div>
   <div class="small-4 columns controls">
     <%= link_to fa_icon("eye 2x"), post, target: "_blank", title: "Show" %>
