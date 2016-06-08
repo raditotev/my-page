@@ -4,7 +4,7 @@
   <div class="small-10 small-centered medium-6 medium-centered">
     <h3><%= link_to project.title, project %></h3>
     <p><%= image_tag project.screenshot.url %></p>
-    <p><%= get_first_sentence project %></p>
+    <p><%= get_first_sentence project.description %></p>
 </div>
 <% end %>
 </div>

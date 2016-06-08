@@ -3,6 +3,7 @@
   <% @posts.each do |post| %>
   <div class="small-10 small-centered medium-6 medium-centered">
     <h3><%= link_to post.title, post %></h3>
+    <p><%= get_first_sentence strip_tags(post.content) %></p>
     <div class="row">
       <div class="small-12 medium-4 columns">
       <p><%= post.created_at.strftime("%e %B, %Y") %></p>
