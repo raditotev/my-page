@@ -1,18 +1,14 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <%= image_tag @project.screenshot.url(:medium) %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
+<div id="show-project">
+  <div class="row">
+    <div class="small-8 small-centered">
+      <h1 class="text-center"><%= @project.title %></h1>
+      <p>
+        <%= image_tag @project.screenshot.url %>
+      </p>
+      <p>
+        <%= @project.description %>
+      </p>
+    </div>
+  </div>
+</div>
 <%= link_to 'Back', projects_path %>
