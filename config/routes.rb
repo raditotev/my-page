@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
-  get 'contacts' => 'pages#contacts'
+  get 'contact' => 'contacts#new'
   get 'tags/:tag' => 'posts#index', as: :tag
 
   devise_for :admin, only: :sessions

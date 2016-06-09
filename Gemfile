@@ -32,6 +32,8 @@ gem "ckeditor"
 #Styling
 gem 'foundation-rails'
 gem "font-awesome-rails"
+#Mail generator
+gem 'mail_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
