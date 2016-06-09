@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
           flash[:success] = "Thank you for your message."
           redirect_to new_contact_path
         }
-        format.js { flash.now[:success] = "Thank you for your message. We will contact you soon!" }
+        format.js { flash.now[:success] = "Thank you for your message." }
       end
     else
       respond_to do |format|
@@ -20,7 +20,7 @@ class ContactsController < ApplicationController
           flash.now[:error] = 'Cannot send message.'
           render :new
         }
-        format.js { flash.now[:error] = 'Cannot send message.' }
+        format.js { flash.now[:error] = 'Cannot send message.'}
       end
     end
   end
