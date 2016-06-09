@@ -5,10 +5,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :projects
+  resources "contacts", only: [:new, :create]
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
-  get 'contact' => 'contacts#new'
   get 'tags/:tag' => 'posts#index', as: :tag
 
   devise_for :admin, only: :sessions
