@@ -1,3 +1,21 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+jQuery ->
+  if $('#contact_name').val() ==  "" || $('#contact_email').val() ==  "" || $('#contact_message').val() ==  ""
+    $('#send_message').prop('disabled', true)
+
+  $('#contact_name').keyup ->
+    if $('#contact_name').val() ==  "" || $('#contact_email').val() ==  "" || $('#contact_message').val() ==  ""
+      $('#send_message').prop('disabled', true)
+    else
+      $('#send_message').prop('disabled', false)
+
+  $('#contact_email').keyup ->
+    if $('#contact_name').val() ==  "" || $('#contact_email').val() ==  "" || $('#contact_message').val() ==  ""
+      $('#send_message').prop('disabled', true)
+    else
+      $('#send_message').prop('disabled', false)
+
+  $('#contact_message').keyup ->
+    if $('#contact_name').val() ==  "" || $('#contact_email').val() ==  "" || $('#contact_message').val() ==  ""
+      $('#send_message').prop('disabled', true)
+    else
+      $('#send_message').prop('disabled', false)

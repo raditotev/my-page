@@ -8,5 +8,3 @@ jQuery ->
     else
       $('#create-comment-button').prop('disabled', true)
 
-  $('#form-comment-content').click ->
-    $(this).height(100)

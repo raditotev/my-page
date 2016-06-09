@@ -1,4 +1,4 @@
-require 'spec_helper'
+# require 'spec_helper'
 
 # Specs in this file have access to a helper object that includes
 # the ContactsHelper. For example:
@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-RSpec.describe ContactsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+# RSpec.describe ContactsHelper, type: :helper do
+#   pending "add some examples to (or delete) #{__FILE__}"
+# end

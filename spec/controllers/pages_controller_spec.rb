@@ -24,12 +24,4 @@ RSpec.describe PagesController, type: :controller do
     it {is_expected.to be_success}
     it {is_expected.to render_template :blog}
   end
-
-  describe ".contacts'" do
-    before {get :contacts}
-
-    it {is_expected.to be_success}
-    it {is_expected.to render_template :contacts}
-  end
-
 end
