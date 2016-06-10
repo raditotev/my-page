@@ -1,5 +1,5 @@
+<% provide(:title, "Portfolio") %>
 <div class="row" id="projects-index">
-  <h1 class="text-center">Projects</h1>
   <% @projects.each do |project| %>
   <div class="small-10 small-centered medium-6 medium-centered">
     <h3><%= link_to project.title, project %></h3>

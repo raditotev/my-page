@@ -1,5 +1,5 @@
+<% provide(:title, "Blog") %>
 <div class="row" id="posts-index">
-  <h1 class="text-center">Blog</h1>
   <% @posts.each do |post| %>
   <div class="small-10 small-centered medium-6 medium-centered">
     <h3><%= link_to post.title, post %></h3>

@@ -1,8 +1,8 @@
-<h1>Contact</h1>
+<% provide(:title, "Contact") %>
 
 <div id="contact">
   <div class="row">
-    <div class="small-8 small-centered">
+    <div class="small-10 small-centered medium-6 medium-centered">
       <%= form_for(@contact, remote: true) do |f| %>
       <% if @contact.errors.any? %>
       <div id="error_explanation">

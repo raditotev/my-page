@@ -12,6 +12,32 @@
 </head>
 
 <body>
+  <!-- Navigation -->
+  <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar" id="menu">
+    <div class="row">
+      <div class="medium-6 medium-centered">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+          <li class="menu-text"><h3><%= yield :title %></h3></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Portfolio", portfolio_path %></li>
+            <li><%= link_to "Blog", blog_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Error messages -->
   <div class="row">
     <div class="small-8 small-centered medium-4 medium-centered">
       <div id="notice" class="text-center">

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
   resources :projects, except: :index
   resources "contacts", only: :create
-  get 'contact' => 'contacts#new'
+  get 'contact' => 'contacts#new', as: :contact
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
