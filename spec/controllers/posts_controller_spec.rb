@@ -10,40 +10,6 @@ RSpec.describe PostsController, type: :controller do
     sign_in @admin
   end
 
-  describe "GET #index" do
-    let(:post){ create(:post) }
-
-    it "opens index page" do
-      get :index
-      expect(response).to render_template(:index)
-    end
-
-    it "assigns all posts as @posts" do
-      get :index, {}, valid_session
-      expect(assigns(:posts)).to eq([post])
-    end
-
-    it "displays most recent first" do
-      post1 = create(:post)
-      post2 = create(:post, title: "Title1")
-      get :index, {}, valid_session
-      expect(assigns(:posts)).to eq([post2, post1])
-    end
-
-    describe "when tag passed in params" do
-
-      it "returns posts with the same tag"do
-        post1 = create(:post, all_tags: "Tag")
-        post2 = create(:post, all_tags: "Different")
-        post3 = create(:post, all_tags: "Tag")
-        get :index, {tag: "TAG"}, valid_session
-        expect(assigns(:posts)).to eq([post3, post1])
-      end
-
-
-    end
-  end
-
   describe "GET #show" do
     let(:post){ create(:post) }
 
@@ -56,11 +22,6 @@ RSpec.describe PostsController, type: :controller do
       comment = post.comments.create(attributes_for(:comment))
       get :show, {:id => post.to_param}, valid_session
       expect(assigns(:comments)).to eq([comment])
-    end
-
-    it "assigns all posts as @posts" do
-      get :index, {}, valid_session
-      expect(assigns(:posts)).to eq([post])
     end
   end
 

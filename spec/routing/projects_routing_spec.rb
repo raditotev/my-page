@@ -3,9 +3,9 @@ require "spec_helper"
 RSpec.describe ProjectsController, type: :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/projects").to route_to("projects#index")
-    end
+    # it "routes to #index" do
+    #   expect(:get => "/projects").to route_to("projects#index")
+    # end
 
     it "routes to #new" do
       expect(:get => "/projects/new").to route_to("projects#new")

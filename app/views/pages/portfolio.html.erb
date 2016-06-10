@@ -1,2 +1,10 @@
-<h1>Pages#portfolio</h1>
-<p>Find me in app/views/pages/portfolio.html.erb</p>
+<div class="row" id="projects-index">
+  <h1 class="text-center">Projects</h1>
+  <% @projects.each do |project| %>
+  <div class="small-10 small-centered medium-6 medium-centered">
+    <h3><%= link_to project.title, project %></h3>
+    <p><%= image_tag project.screenshot.url %></p>
+    <p><%= get_first_sentence project.description %></p>
+</div>
+<% end %>
+</div>

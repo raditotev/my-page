@@ -1,5 +1,17 @@
 require 'spec_helper'
 
-# describe "pages/blog.html.erb" do
-#   pending "add some examples to (or delete) #{__FILE__}"
-# end
+RSpec.describe "pages/blog", type: :view do
+  before(:each) do
+    @post = create(:post)
+    assign(:posts, [@post])
+    render
+  end
+
+  subject { rendered }
+
+  it { is_expected.to have_css "h1", text: "Blog" }
+  it { is_expected.to have_css "h3", text: "Post Title" }
+  it { is_expected.to have_link "Post Title" }
+  it { is_expected.to  have_link "TAG"}
+  it { is_expected.to have_css "p", text: "#{@post.created_at.strftime("%e %B, %Y")}" }
+end

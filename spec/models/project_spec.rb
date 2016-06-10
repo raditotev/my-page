@@ -12,7 +12,7 @@ RSpec.describe Project, type: :model do
       expect(build(:project, title: nil)).to_not be_valid
     end
 
-    it "is invalid without descriprtio" do
+    it "is invalid without descriprtion" do
       expect(build(:project, description: nil)).to_not be_valid
     end
 

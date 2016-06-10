@@ -1,23 +1,21 @@
 Rails.application.routes.draw do
 
   mount Ckeditor::Engine => '/ckeditor'
-  resources :posts do
+  resources :posts, except: :index do
     resources :comments, only: [:create, :destroy]
   end
-  resources :projects
+  resources :projects, except: :index
   resources "contacts", only: [:new, :create]
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
-  get 'tags/:tag' => 'posts#index', as: :tag
+  get 'tags/:tag' => 'pages#index', as: :tag
 
   devise_for :admin, only: :sessions
 
   get 'admin' => 'admin#home'
   get 'admin/projects' => 'admin#projects'
   get 'admin/posts' => 'admin#posts'
-
-  root "posts#index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

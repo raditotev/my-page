@@ -18,37 +18,6 @@ RSpec.describe ProjectsController, type: :controller do
     sign_in @admin
   end
 
-  describe "GET #index" do
-
-    context "when admin user" do
-      it "opens index page" do
-        get :index
-        expect(response).to render_template(:index)
-      end
-    end
-
-    context "when user not admin" do
-      it "opens index page" do
-        sign_out @admin
-        get :index
-        expect(response).to render_template(:index)
-      end
-    end
-
-    it "assigns all projects as @projects" do
-      project = Project.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:projects)).to eq([project])
-    end
-
-    it "displays most recent first" do
-      project1 = Project.create! valid_attributes
-      project2 = Project.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:projects)).to eq([project2, project1])
-    end
-  end
-
   describe "GET #show" do
 
     it "assigns the requested project as @project" do

@@ -1,2 +1,18 @@
-<h1>Pages#blog</h1>
-<p>Find me in app/views/pages/blog.html.erb</p>
+<div class="row" id="posts-index">
+  <h1 class="text-center">Blog</h1>
+  <% @posts.each do |post| %>
+  <div class="small-10 small-centered medium-6 medium-centered">
+    <h3><%= link_to post.title, post %></h3>
+    <p><%= get_first_sentence strip_tags(post.content) %></p>
+    <div class="row">
+      <div class="small-12 medium-4 columns">
+      <p><%= post.created_at.strftime("%e %B, %Y") %></p>
+     </div>
+     <div class="small-12 medium-8 columns">
+      <p><%= raw tag_links(post.all_tags) %></p>
+    </div>
+  </div>
+</div>
+<% end %>
+</div>
+
