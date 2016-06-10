@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
-  get 'tags/:tag' => 'pages#index', as: :tag
+  get 'tags/:tag' => 'pages#blog', as: :tag
 
   devise_for :admin, only: :sessions
 
