@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy]
   end
   resources :projects, except: :index
-  resources "contacts", only: [:new, :create]
+  resources "contacts", only: :create
+  get 'contact' => 'contacts#new'
   get 'about' => 'pages#about'
   get 'portfolio' => 'pages#portfolio'
   get 'blog' => 'pages#blog'
