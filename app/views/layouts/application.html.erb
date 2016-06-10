@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "My Blog" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "My Blog" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
-  <%= render 'shared/flash_messages' %>
+<body>
+  <div class="row">
+    <div class="small-8 small-centered medium-4 medium-centered">
+      <div id="notice" class="text-center">
+        <%= render 'shared/flash_messages' %>
+      </div>
+    </div>
+  </div>
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
+</body>
 </html>

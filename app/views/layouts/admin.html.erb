@@ -18,7 +18,11 @@
       <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
     </div>
   </div>
-  <%= render 'shared/flash_messages' %>
+  <div class="row text-center">
+    <div id="notice">
+        <%= render 'shared/flash_messages' %>
+      </div>
+  </div>
   <div class="row" id="wrapper">
     <!-- NAVIGATION -->
     <div class="small-4 columns"  id="side_nav">

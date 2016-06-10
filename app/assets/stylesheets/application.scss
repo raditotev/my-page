@@ -17,3 +17,23 @@
  */
  @import "foundation_and_overrides";
  @import "font-awesome";
+
+#notice{
+  .alert-success{
+    border: solid 3px green;
+    background-color: #f0f0f0;
+    color: green;
+  }
+  .alert-error{
+  border: solid 3px red;
+  background-color: #f0f0f0;
+  color: red;
+  }
+  font-weight: bold;
+  margin: 20px;
+  p{
+
+    margin: 10px;
+
+  }
+}
