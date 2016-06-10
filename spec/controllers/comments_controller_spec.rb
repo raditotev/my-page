@@ -37,7 +37,7 @@ RSpec.describe CommentsController, type: :controller do
 
       it "redirects to the commented post" do
         post :create, {post_id: @post.id, comment: valid_attributes}, valid_session
-        expect(response).to redirect_to(Post.find(@post.id))
+        expect(response).to redirect_to(Post.friendly.find(@post.id))
       end
     end
 
@@ -78,7 +78,7 @@ RSpec.describe CommentsController, type: :controller do
     context "when user not admin" do
       it "redirects to login page" do
         sign_out @admin
-        comment = create(:comment)
+        comment = create(:comment, post: @post)
         delete :destroy, {post_id: @post.id, id: comment.to_param}, valid_session
         expect(response).to redirect_to new_admin_session_path
       end

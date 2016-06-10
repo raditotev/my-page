@@ -25,14 +25,14 @@ describe AdminController do
 
     it "assigns last 7 projects as @projects" do
       project = {}
-      (1..8).each {|n| project[n] = create(:project)}
+      (1..8).each {|n| project[n] = create(:project, title: "Title#{n}")}
       get :home, {}, valid_session
       expect(assigns(:projects)).to eq([project[7], project[6], project[5], project[4], project[3], project[2], project[1]])
     end
 
     it "assigns last 7 posts as @posts" do
       post = {}
-      (1..8).each {|n| post[n] = create(:post)}
+      (1..8).each {|n| post[n] = create(:post, title: "Title#{n}")}
       get :home, {}, valid_session
       expect(assigns(:posts)).to eq([post[7], post[6], post[5], post[4], post[3], post[2], post[1]])
     end

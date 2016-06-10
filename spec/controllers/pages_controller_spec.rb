@@ -27,8 +27,8 @@ RSpec.describe PagesController, type: :controller do
     end
 
     it "displays most recent first" do
-      project1 = create(:project)
-      project2 = create(:project)
+      project1 = create(:project, title: "Title1")
+      project2 = create(:project, title: "Title2")
       get :portfolio, {}, valid_session
       expect(assigns(:projects)).to eq([project2, project1])
     end
@@ -56,9 +56,9 @@ RSpec.describe PagesController, type: :controller do
     describe "when tag passed in params" do
 
       it "returns posts with the same tag"do
-        post1 = create(:post, all_tags: "Tag")
-        post2 = create(:post, all_tags: "Different")
-        post3 = create(:post, all_tags: "Tag")
+        post1 = create(:post, title: "Title1", all_tags: "Tag")
+        post2 = create(:post, title: "Title2", all_tags: "Different")
+        post3 = create(:post, title: "Title3", all_tags: "Tag")
         get :blog, {tag: "TAG"}, valid_session
         expect(assigns(:posts)).to eq([post3, post1])
       end
