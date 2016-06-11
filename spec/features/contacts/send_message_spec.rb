@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Send message" do
 
   before :each do
-    visit new_contact_path
+    visit contact_path
   end
 
   scenario "with valid details", js: true do

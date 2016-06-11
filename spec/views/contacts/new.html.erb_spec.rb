@@ -6,9 +6,9 @@ RSpec.describe "contacts/new.html.erb", type: :view do
     render
   end
 
-  it "has Contact header" do
-    assert_select "h1", "Contact"
-  end
+  pending "has Contact header"
+    # assert_select "h1", "Contact"
+
 
   it "renders new contact form" do
     assert_select "form[action=?][method=?]", contacts_path, "post" do

@@ -10,7 +10,7 @@ class ContactsController < ApplicationController
       respond_to do |format|
         format.html {
           flash[:success] = "Thank you for your message."
-          redirect_to new_contact_path
+          redirect_to contact_path
         }
         format.js { flash.now[:success] = "Thank you for your message." }
       end

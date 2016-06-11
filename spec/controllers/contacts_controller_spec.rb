@@ -29,12 +29,13 @@ RSpec.describe ContactsController, type: :controller do
       before :each do
         post :create, {contact: attributes_for(:contact)}, valid_session
       end
+
       it "assigns a newly created contact as @contact" do
         expect(assigns(:contact)).to be_a(Contact)
       end
 
       it "redirects to new contact on success" do
-        expect(response).to redirect_to new_contact_path
+        expect(response).to redirect_to contact_path
       end
     end
 
