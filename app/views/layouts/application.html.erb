@@ -14,7 +14,7 @@
 <body>
 <div id="<%= yield :id %>-banner">
   <div class="row text-center">
-  <h1><%= yield :h1 %></h1>
+  <h1><%= content_for?(:h1) ? yield(:h1) : yield(:title) %></h1>
   <h5><%= yield :subtitle %></h5>
   </div>
 </div>

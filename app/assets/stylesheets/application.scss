@@ -58,12 +58,7 @@
 #about-banner{
   height: 50%;
   background: image_url("about_banner.jpg");
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat: no-repeat;
+  @include background();
   .row{
     @include vertical-align();
   }
@@ -87,12 +82,13 @@
 #portfolio-banner{
   height: 50%;
   background: image_url("portfolio_banner.jpg");
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat: no-repeat;
+  @include background();
+  .row{
+    @include vertical-align();
+  }
+  @media screen and (max-width: 600px){
+    height: 30%;
+  }
 }
 
 .top-bar ul{
