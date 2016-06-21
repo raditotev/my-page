@@ -97,6 +97,23 @@ a{
   .text-color-#{$name} { color:$color !important; }
 }
 
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin background($position: center, $size: cover, $repeat: no-repeat){
+  background-position: $position;
+  background-size: $size;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  background-repeat: $repeat;
+}
+
 // 2. Breakpoints
 // --------------
 
