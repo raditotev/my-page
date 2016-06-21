@@ -47,12 +47,13 @@
 #blog-banner{
   height: 50%;
   background: image_url("blog_banner.jpg");
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat: no-repeat;
+  @include background($position: 0% 30%);
+  .row{
+    @include vertical-align();
+  }
+  @media screen and (max-width: 600px){
+    height: 30%;
+  }
 }
 
 #about-banner{
@@ -71,12 +72,13 @@
 #contact-banner{
   height: 50%;
   background: image_url("contact_banner.jpg");
-  background-position: center;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-repeat: no-repeat;
+  @include background();
+  .row{
+    @include vertical-align();
+  }
+  @media screen and (max-width: 600px){
+    height: 30%;
+  }
 }
 
 #portfolio-banner{
