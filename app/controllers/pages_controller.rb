@@ -13,4 +13,12 @@ class PagesController < ApplicationController
       @posts = Post.all
     end
   end
+
+  def download_cv
+    send_file(
+      "#{Rails.root}/public/radi_cv.pdf",
+      filename: "radi_cv.pdf",
+      type: "application/pdf"
+    )
+  end
 end

@@ -2,7 +2,7 @@
 <% provide(:id, "blog") %>
 <% provide(:subtitle, "I hope you'll find my articles useful") %>
 
-<div class="row" id="posts-index">
+<div class="row" id="blog-page">
   <% @posts.each do |post| %>
   <div class="small-10 small-centered medium-6 medium-centered">
     <h3><%= link_to post.title, post %></h3>
