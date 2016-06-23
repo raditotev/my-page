@@ -98,9 +98,9 @@ a{
   .text-color-#{$name} { color:$color !important; }
 }
 
-@mixin vertical-align($position: relative) {
+@mixin vertical-align($position: relative, $offset: 50%) {
   position: $position;
-  top: 50%;
+  top: $offset;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
