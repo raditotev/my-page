@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'pages#about'
+
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts, except: :index do
     resources :comments, only: [:create, :destroy]

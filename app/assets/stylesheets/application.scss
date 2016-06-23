@@ -18,6 +18,10 @@
  @import "foundation_and_overrides";
  @import "font-awesome";
 
+body{
+  background-color: #FFF8F0;
+}
+
 #notice{
   .alert-success{
     border: solid 3px green;
@@ -34,6 +38,67 @@
   p{
     margin: 10px;
   }
+}
+
+/*Page Banner*/
+
+#about-banner, #portfolio-banner, #blog-banner, #contact-banner{
+  height: 50%;
+  text-align: center;
+  .row{
+    @include vertical-align();
+  }
+  h1{
+    font-weight: 900;
+  }
+  h5{
+    font-weight: 600;
+  }
+}
+
+#about-banner{
+  color: #A0EE3B;
+  background: image_url("about_banner.jpg");
+  @include background();
+  @media screen and (max-width: 600px){
+    @include background($position: 60%, $size: 250% 100%);
+    height: 30%;
+  }
+}
+
+#portfolio-banner{
+  background: image_url("portfolio_banner.jpg");
+  color: #EB914F;
+  /*text-shadow: 2px 2px 2px #CCC;*/
+  /*text-align: left;*/
+  @include background($position: 80%);
+  @media screen and (max-width: 600px){
+    height: 30%;
+    @include background($size: initial, $position: 30%);
+  }
+}
+
+#blog-banner{
+  background: image_url("blog_banner.jpg");
+  @include background($position: 0% 30%);
+  @media screen and (max-width: 500px){
+    height: 30%;
+  }
+}
+
+#contact-banner{
+  background: image_url("contact_banner.jpg");
+  @include background();
+  @media screen and (max-width: 600px){
+    height: 30%;
+  }
+}
+
+/*Navigation Bar*/
+
+.top-bar ul{
+  display: inline-block;
+  background-color: transparent;
 }
 
 #about, #portfolio, #blog, #contact{
@@ -54,63 +119,7 @@
   }
 }
 
-#blog-banner{
-  height: 50%;
-  background: image_url("blog_banner.jpg");
-  @include background($position: 0% 30%);
-  .row{
-    @include vertical-align();
-  }
-  @media screen and (max-width: 500px){
-    height: 30%;
-  }
+#portfolio{
+  background-color: #111111;
 }
 
-#about-banner{
-  height: 50%;
-  color: #A0EE3B;
-  background: image_url("about_banner.jpg");
-  @include background();
-  .row{
-    @include vertical-align();
-  }
-  @media screen and (max-width: 600px){
-    @include background($position: 60%, $size: 250% 100%);
-    height: 30%;
-  }
-  h1{
-    font-weight: 600;
-  }
-  h5{
-    font-weight: 600;
-  }
-}
-
-#contact-banner{
-  height: 50%;
-  background: image_url("contact_banner.jpg");
-  @include background();
-  .row{
-    @include vertical-align();
-  }
-  @media screen and (max-width: 600px){
-    height: 30%;
-  }
-}
-
-#portfolio-banner{
-  height: 50%;
-  background: image_url("portfolio_banner.jpg");
-  @include background();
-  .row{
-    @include vertical-align();
-  }
-  @media screen and (max-width: 600px){
-    height: 30%;
-  }
-}
-
-.top-bar ul{
-  display: inline-block;
-  background-color: transparent;
-}

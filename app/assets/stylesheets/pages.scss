@@ -1,10 +1,15 @@
-#about-page{
+#about-page, #portfolio-page, #blog-page, #contact-page{
   h3{
     font-size: 3.5em;
+    font-weight: bold;
+    color: #768288;
     margin: 3em auto;
     padding-bottom: 1em;
     border-bottom: 4px double;
   }
+}
+
+#about-page{
   p{
     font-size: 1.2em;
     line-height: 1.8em;
@@ -23,6 +28,13 @@
       }
     }
   }
+
+  #portfolio-page{
+    .project-img{
+      margin: 1.5em auto;
+    }
+  }
+
   #contact-link{
     text-decoration: underline;
   }
