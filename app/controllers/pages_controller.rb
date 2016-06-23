@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  layout 'home', only: :landing_page
+
+  def landing_page
+  end
+
   def about
   end
 

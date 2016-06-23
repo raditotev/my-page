@@ -1,0 +1,14 @@
+@import "settings";
+
+#landing_page{
+  height: 100%;
+  opacity: 0;
+  .small-12{
+    @include vertical-align();
+  }
+  a{
+    color: $primary-color;
+    font-size: 2em;
+    font-weight: bold;
+  }
+}

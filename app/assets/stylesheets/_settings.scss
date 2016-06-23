@@ -106,6 +106,12 @@ a{
   transform: translateY(-50%);
 }
 
+@mixin scale-element($x: 1, $y: 1) {
+  -ms-transform: scale($x, $y);
+  -webkit-transform: scale($x, $y);
+  transform: scale($x, $y);
+}
+
 @mixin background($position: center, $size: cover, $repeat: no-repeat){
   background-position: $position;
   background-size: $size;
