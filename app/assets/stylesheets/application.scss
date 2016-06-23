@@ -69,8 +69,6 @@ body{
 #portfolio-banner{
   background: image_url("portfolio_banner.jpg");
   color: #EB914F;
-  /*text-shadow: 2px 2px 2px #CCC;*/
-  /*text-align: left;*/
   @include background($position: 80%);
   @media screen and (max-width: 600px){
     height: 30%;
@@ -96,6 +94,8 @@ body{
 
 #contact-banner{
   background: image_url("contact_banner.jpg");
+  text-align: left;
+  color: #2F221A;
   @include background();
   @media screen and (max-width: 600px){
     height: 30%;
@@ -133,5 +133,9 @@ body{
 
 #blog{
   background-color: #2A4743;
+}
+
+#contact{
+  background-color: #2F221A;
 }
 
