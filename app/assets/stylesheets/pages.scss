@@ -2,7 +2,8 @@
   h3{
     font-size: 3.5em;
     font-weight: bold;
-    margin: 3em auto;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
     padding-bottom: 1em;
     border-bottom: 4px double;
   }
@@ -24,7 +25,8 @@
     margin-bottom: 1.5em;
     border-radius: 2px;
   }
-  .small-4{
+  .medium-4{
+    margin-bottom: 2em;
     padding: 0 auto;
     a{
       font-size: 1.5em;
@@ -48,6 +50,10 @@
     h3{
       color: #1C3B3D;
     }
+  }
+
+  #contact-page{
+    color: #2F221A;
   }
 
 #contact-link{

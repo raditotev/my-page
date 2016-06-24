@@ -3,9 +3,11 @@
 <% provide(:subtitle, "I hope you'll find my articles useful") %>
 
 <div class="row" id="blog-page">
-  <h3 class="text-center">Posts</h3>
+  <div class="small-10 small-centered medium-8 medium-centered">
+    <h3 class="text-center">Posts</h3>
+  </div>
   <% @posts.each do |post| %>
-  <div class="small-10 small-centered medium-6 medium-centered">
+  <div class="small-10 small-centered medium-8 medium-centered">
     <h4><%= link_to post.title, post %></h4>
     <p><%= get_first_sentence strip_tags(post.content) %></p>
     <div class="row">

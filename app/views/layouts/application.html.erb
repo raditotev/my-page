@@ -25,7 +25,7 @@
     <div class="title-bar-title">Menu</div>
   </div>
 
-  <div class="top-bar" id="<%= yield :id %>">
+  <div class="top-bar" id="<%= content_for?(:id) ? yield(:id) : "navbar" %>">
     <div class="row">
       <div class="medium-6 medium-centered text-center">
           <ul class="menu">
