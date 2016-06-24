@@ -34,7 +34,7 @@
 }
 
   #portfolio-page{
-    h3{
+    h3, a{
       color: #EB914F;
     }
     .project-img{
@@ -43,8 +43,13 @@
   }
 
   #blog-page{
-    h3{
+    h3, a{
       color: #1C3B3D;
+    }
+    .tag-links{
+      a{
+        color: #615391;
+      }
     }
   }
 

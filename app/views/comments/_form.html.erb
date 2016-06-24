@@ -6,8 +6,7 @@
     <%= f.text_field :email, id: "form-comment-email", placeholder: "Your email (optional/ not public)" %>
   </div>
   <div class="field">
-    <%= f.label "Your comment" %><br>
-    <%= f.text_area :content, id:"form-comment-content" %>
+    <%= f.text_area :content, id:"form-comment-content", placeholder: "Your comment..." %>
   </div>
   <div class="actions">
     <%= f.submit "Leave comment", class: "button", id: "create-comment-button" %>

@@ -10,15 +10,7 @@
   <div class="small-10 small-centered medium-8 medium-centered">
     <h4><%= link_to post.title, post %></h4>
     <p><%= get_first_sentence strip_tags(post.content) %></p>
-    <div class="row">
-      <div class="small-12 medium-4 columns">
-      <p><%= post.created_at.strftime("%e %B, %Y") %></p>
-     </div>
-     <div class="small-12 medium-8 columns">
-      <p><%= raw tag_links(post.all_tags) %></p>
-    </div>
-  </div>
+    <p class="tag-links"><%= raw tag_links(post.all_tags) %></p>
 </div>
 <% end %>
 </div>
-
