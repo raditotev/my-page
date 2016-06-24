@@ -8,6 +8,10 @@
       <p>
         <%= @project.description %>
       </p>
+      <p class="text-center" id="project-links">
+        <%= link_to fa_icon("github 3x"), @project.github_url, title: "Source code", target: "_blank" %>
+        <%= link_to fa_icon("desktop 3x"), @project.demo_url, title: "Live demo", target: "_blank" %>
+      </p>
     </div>
   </div>
 </div>

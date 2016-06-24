@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610083116) do
+ActiveRecord::Schema.define(version: 20160624102728) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 20160610083116) do
     t.integer  "screenshot_file_size"
     t.datetime "screenshot_updated_at"
     t.string   "slug"
+    t.string   "github_url"
+    t.string   "demo_url"
   end
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true

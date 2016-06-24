@@ -19,7 +19,19 @@
  @import "font-awesome";
 
 body{
-  background-color: #FFF8F0;
+  p{
+    font-family: 'Lora', serif;
+    font-size: 1.2em;
+  }
+  a{
+    color: #000;
+    &:hover{
+      background-color: transparent;
+    }
+  }
+  span{
+    font-family: 'Istok Web', sans-serif;
+  }
 }
 
 #navbar{

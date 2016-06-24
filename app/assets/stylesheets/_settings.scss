@@ -61,7 +61,8 @@ $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
+// $body-background: $white;
+$body-background: #FFF8F0;
 $body-font-color: $black;
 //$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-font-family:  'Lora', serif;
@@ -79,20 +80,6 @@ $print-transparent-backgrounds: true;
 @include add-foundation-colors;
 
 // ** My global settings
-a{
-  color: #000;
-  &:hover{
-    background-color: transparent;
-  }
-}
-
-.alert-success{
-  color: green;
-}
-
-.alert-error{
-  color: red;
-}
 
 @each $name, $color in $foundation-palette {
   .text-color-#{$name} { color:$color !important; }
@@ -104,12 +91,6 @@ a{
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
-}
-
-@mixin scale-element($x: 1, $y: 1) {
-  -ms-transform: scale($x, $y);
-  -webkit-transform: scale($x, $y);
-  transform: scale($x, $y);
 }
 
 @mixin background($position: center, $size: cover, $repeat: no-repeat){
@@ -165,7 +146,8 @@ $header-sizes: (
     'h1': 48,
     'h2': 40,
     'h3': 31,
-    'h4': 25,
+    //'h4': 25,
+    'h4': 29,
     'h5': 20,
     'h6': 16,
   ),
@@ -176,7 +158,8 @@ $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
-$paragraph-lineheight: 1.6;
+// $paragraph-lineheight: 1.6;
+$paragraph-lineheight: 1.8;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
