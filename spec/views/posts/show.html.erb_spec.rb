@@ -11,6 +11,6 @@ RSpec.describe "posts/show", type: :view do
   subject { rendered }
 
   it { is_expected.to have_css "h1", text: "Post Title" }
-  it { is_expected.to have_css "p", text: "Post Text" }
+  it { is_expected.to have_css "#post-content", text: "Post Text" }
   it { is_expected.to have_link "TAG", href: "/tags/TAG" }
 end
