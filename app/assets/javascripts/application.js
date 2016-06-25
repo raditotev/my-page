@@ -20,3 +20,6 @@
 
 
 $(function(){ $(document).foundation(); });
+// Loading styles for code snippets
+hljs.initHighlightingOnLoad();
+
