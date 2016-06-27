@@ -34,7 +34,7 @@ body{
   }
 }
 
-#navbar{
+.navbar{
   background-color: $primary-color;
   margin-bottom: 5%;
   a{
@@ -130,11 +130,11 @@ body{
   background-color: transparent;
 }
 
-#about, #portfolio, #blog, #contact{
-  @extend #navbar;
+.about, .portfolio, .blog, .contact{
+  @extend .navbar;
 }
 
-#about{
+.about{
   background-color: #151515;
   a{
     &:hover{
@@ -143,15 +143,15 @@ body{
   }
 }
 
-#portfolio{
+.portfolio{
   background-color: #111111;
 }
 
-#blog{
+.blog{
   background-color: #2A4743;
 }
 
-#contact{
+.contact{
   background-color: #2F221A;
 }
 

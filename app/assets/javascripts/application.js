@@ -16,10 +16,14 @@
 //= require foundation
 //= require turbolinks
 //= require ckeditor/init
-//= require_tree .
+//= require ckeditor/config
+//= require ckeditor/plugins/codesnippet/plugin
+//= require ckeditor/plugins/codesnippet/lang/en
+//= require ckeditor/plugins/widget/plugin
+//= require ckeditor/plugins/widget/lang/en
+//= require ckeditor/plugins/codesnippet/lib/highlight/highlight.pack
+//= require_directory .
 
 
 $(function(){ $(document).foundation(); });
-// Loading styles for code snippets
-hljs.initHighlightingOnLoad();
 

@@ -13,19 +13,22 @@
 </head>
 
 <body>
+<% if content_for?(:id) %>
 <div id="<%= yield :id %>-banner">
   <div class="row">
   <h1><%= content_for?(:h1) ? yield(:h1) : yield(:title) %></h1>
   <h5><%= yield :subtitle %></h5>
   </div>
 </div>
+<% end %>
+
   <!-- Navigation -->
-  <div class="title-bar" data-responsive-toggle="<%= yield :id %>" data-hide-for="medium">
+  <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
     <div class="title-bar-title">Menu</div>
   </div>
 
-  <div class="top-bar" id="<%= content_for?(:id) ? yield(:id) : "navbar" %>">
+  <div class="top-bar <%= content_for?(:id) ? yield(:id) : "navbar" %>" id="menu">
     <div class="row">
       <div class="medium-6 medium-centered text-center">
           <ul class="menu">
