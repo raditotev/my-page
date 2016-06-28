@@ -56,6 +56,7 @@ config/database.yml
 config/application.yml
 config/mandrill.yml
 config/paperclip.yml
+config/secrets.yml
 
 # System Recordings from Tropo
 public/tropo_recordings/**/*
@@ -139,3 +140,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+

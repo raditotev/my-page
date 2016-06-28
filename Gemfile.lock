@@ -138,6 +138,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
+    pg (0.18.4)
     pkg-config (1.1.7)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -258,6 +259,7 @@ DEPENDENCIES
   letter_opener
   mail_form
   paperclip (~> 5.0.0.beta1)
+  pg
   rails (= 4.2.4)
   rspec-rails
   sass-rails (~> 5.0)
