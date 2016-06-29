@@ -23,7 +23,7 @@
 <% end %>
 
   <!-- Navigation -->
-  <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
+  <div class="title-bar <%= content_for?(:id) ? yield(:id) : "navbar" %>" data-responsive-toggle="menu" data-hide-for="medium">
     <button class="menu-icon" type="button" data-toggle></button>
     <div class="title-bar-title">Menu</div>
   </div>
