@@ -23,6 +23,14 @@
     <%= f.label :screenshot, class: "hollow button" %>
     <%= f.file_field :screenshot, class: "show-for-sr" %>
   </div>
+  <div class="field">
+    <%= f.label "GitHub Link" %><br>
+    <%= f.text_field :github_url %>
+  </div>
+  <div class="field">
+    <%= f.label "Demo Link" %><br>
+    <%= f.text_field :demo_url %>
+  </div>
   <div class="actions">
     <%= f.submit class: "button" %>
   </div>
