@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title><%= content_for?(:title) ? yield(:title) : "My Blog" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Radi's Page" %></title>
 
   <%= stylesheet_link_tag "application" %>
   <link href='https://fonts.googleapis.com/css?family=Istok+Web|Lora' rel='stylesheet' type='text/css'>
@@ -16,7 +16,7 @@
 <% if content_for?(:id) %>
 <div id="<%= yield :id %>-banner">
   <div class="row">
-  <h1><%= content_for?(:h1) ? yield(:h1) : yield(:title) %></h1>
+  <h1><%= yield :title %></h1>
   <h5><%= yield :subtitle %></h5>
   </div>
 </div>
