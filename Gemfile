@@ -75,6 +75,8 @@ group :production do
   gem 'pg'
   # Static asset serving
   gem 'rails_12factor'
+  # Webserver
+  gem 'puma'
 end
 
 ruby "2.2.1"

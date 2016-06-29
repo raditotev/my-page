@@ -140,6 +140,8 @@ GEM
       mimemagic (~> 0.3.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    puma (2.11.1)
+      rack (>= 1.1, < 2.0)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -265,6 +267,7 @@ DEPENDENCIES
   mail_form
   paperclip (~> 5.0.0.beta1)
   pg
+  puma
   rails (= 4.2.4)
   rails_12factor
   rspec-rails

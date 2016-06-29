@@ -100,7 +100,7 @@ body{
 #blog-banner{
   color: #1C3B3D;
   text-shadow: 0px 4px 6px #000;
-  background: image_url("blog_banner.jpg");
+  background: image_url("blog_banner.jpeg");
   @include background($position: 0% 30%);
   @media screen and (max-width: 600px){
     height: 30%;
