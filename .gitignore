@@ -139,6 +139,3 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-# Hide secret tokens
-config/secrets.yml
