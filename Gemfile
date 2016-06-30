@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 #Image upload
 gem "paperclip", "~> 5.0.0.beta1"
+# Amazon Web Services
+gem 'aws-sdk', '~> 2.3'
 # WYSIWYG
 gem "ckeditor"
 #Styling
