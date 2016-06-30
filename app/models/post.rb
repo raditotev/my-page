@@ -2,9 +2,9 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: :slugged
 
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true
