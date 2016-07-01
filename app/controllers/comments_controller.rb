@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @post, flash: { success: "Comment created" } }
         format.js
       end
+      send_email @comment
     else
       respond_to do |format|
         format.html { redirect_to @post, flash: { error: "Please leave comment." } }
