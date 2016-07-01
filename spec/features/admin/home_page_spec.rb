@@ -8,7 +8,7 @@ before :each do
 end
 
   scenario "visit" do
-    expect(page).to have_title "My Blog"
+    expect(page).to have_title "Admin"
     expect(page).to have_css "h1", text: "Admin Panel"
     expect(page).to have_css "a", text: "Projects"
     expect(page).to have_css "a", text: "Posts"
