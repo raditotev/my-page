@@ -1,13 +1,13 @@
-<div class="row">
-<dir class="text-centerd">
+<div class="row text-center">
 <% if @unread_comments > 0 %>
-  <h5 class="text-centered" id="unread-comments">
+  <h5 id="unread-comments">
 <% else %>
-  <h5 class="text-centered">
+  <h5>
 <% end %>
   <%= link_to generate_comments_text(@unread_comments), admin_comments_path %>
   </h5>
-</dir>
+</div>
+<div class="row">
   <div class="small-6 columns">
     <h2>Projects</h2>
     <% @projects.each do |project| %>
