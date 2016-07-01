@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  before_destroy :delete_tags
+
   extend FriendlyId
   friendly_id :title, use: :slugged
 
@@ -23,5 +25,15 @@ class Post < ActiveRecord::Base
 
   def self.tagged_with(name)
     Tag.find_by_name!(name).posts
+  end
+
+  private
+
+  # Deletes all stand alone tags
+  def delete_tags
+    tags = self.tags
+    tags.each do |tag|
+      tag.destroy if tag.posts.count == 1
+    end
   end
 end

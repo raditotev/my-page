@@ -16,6 +16,10 @@ RSpec.describe Post, type: :model do
     it { should have_many(:tags).through(:taggings) }
   end
 
+  before :each do
+    Tag.delete_all
+  end
+
   describe "#all_tags" do
     it "creates post tags" do
       post = create(:post, all_tags: "tag1, tag2")
