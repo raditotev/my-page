@@ -1,4 +1,4 @@
-$('#comments').append("<%=j render 'comments/comment', post: @post, comment: @comment %>");
+$('#comments').prepend("<%=j render 'comments/comment', post: @post, comment: @comment %>");
 $("#notice").html('<div class="alert-error"><%= flash[:error] %></div>');
 $('#form-comment-author').val('')
 $('#form-comment-email').val('')
