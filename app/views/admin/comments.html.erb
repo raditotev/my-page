@@ -1,0 +1,8 @@
+<% @comments.each do |comment| %>
+  <div class="read-<%= comment.read %>">
+    <h3><%= link_to comment.post.title, comment.post %></h3>
+    <strong>Author: <%= comment.author %></strong><br>
+    <strong><%= comment.email %></strong><br>
+    <p><%= comment.content %></p>
+  </div>
+<% end %>

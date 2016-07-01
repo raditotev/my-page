@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#home'
   get 'admin/projects' => 'admin#projects'
   get 'admin/posts' => 'admin#posts'
+  get 'admin/comments' => 'admin#comments'
   get 'download_cv' => 'pages#download_cv'
 
 

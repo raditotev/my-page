@@ -67,3 +67,15 @@ $light_orange: #AA5F39;
     }
   }
 }
+
+// Unread comments
+
+.read-false{
+  background: #ffe6cc;
+}
+
+#unread-comments{
+  a{
+    color: $primary-color;
+  }
+}
