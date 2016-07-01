@@ -35,9 +35,9 @@ RSpec.describe Post, type: :model do
   describe ".tagged_with" do
 
     it "returns list of posts with same tag name" do
-      Post.create(title: "Title1", content: "Text1", all_tags: "Tag")
+      create(:post, title: "Title1")
       expect(Post.tagged_with("TAG").count).to eq 1
-      Post.create(title: "Title2", content: "Text2", all_tags: "Tag")
+      create(:post, title: "Title2")
       expect(Post.tagged_with("TAG").map{|post| post.title}.join(", ")).to eq "Title2, Title1"
     end
   end
