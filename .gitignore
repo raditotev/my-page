@@ -139,3 +139,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Ignore CKEDITOR image uploads
+public/ckeditor_assets/
+
