@@ -15,7 +15,7 @@ feature "Create comment" do
     expect(page).to have_button 'Leave comment', disabled: false
     click_on 'Leave comment'
     wait_for_ajax
-    expect(page).to have_css "strong", text: "John"
+    expect(page).to have_css "h5", text: "John"
     expect(page).to have_css "p", text: "This is a comment."
   end
 
@@ -25,7 +25,7 @@ feature "Create comment" do
     expect(page).to have_button 'Leave comment', disabled: false
     click_on 'Leave comment'
     wait_for_ajax
-    expect(page).to have_css "strong", text: "Anonymous"
+    expect(page).to have_css "h5", text: "Anonymous"
     expect(page).to have_css "p", text: "This is a comment."
   end
 
