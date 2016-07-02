@@ -13,6 +13,11 @@
   h4{
     font-weight: bold;
   }
+  @media (max-width: 480px){
+    h4{
+      font-size: 1.2rem;
+    }
+  }
 }
 
 #about-page{
@@ -44,6 +49,7 @@
       }
     }
   }
+
 }
 
   #portfolio-page{
@@ -52,6 +58,10 @@
     }
     .project-img{
       margin: 1.5em auto;
+    }
+    .project-details{
+      margin-top: -1em;
+      margin-bottom: 2em;
     }
   }
 
@@ -64,8 +74,16 @@
         color: #615391;
       }
     }
+    .small-10, .medium-8{
+      margin-bottom: 2em;
+    }
   }
 
   #contact-page{
     color: #2F221A;
+    @media (max-width: 640px){
+      h3{
+        margin-top: 1em;
+      }
+    }
   }

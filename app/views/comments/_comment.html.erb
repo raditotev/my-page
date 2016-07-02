@@ -1,9 +1,9 @@
 <% if comment.valid? %>
-<div id="comment-#{comment.id}">
-  <strong><%= comment.author %></strong>
-  <% if current_admin %>
+<div class="callout" id="comment-#{comment.id}">
+<% if current_admin %>
     <span class="float-right"><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %></span>
   <% end %>
+  <h5><%= comment.author %></h5>
   <p><%= comment.content %></p>
 </div>
 <% end %>

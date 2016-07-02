@@ -1,8 +1,47 @@
+@import "settings";
+
 #show-post{
   h1{
+    color: $primary-color;
     margin-bottom: -0.2em;
   }
-  #post-header, #post-content{
-    margin-bottom: 3em;
+  #post-header{
+    margin-bottom: 1.5em;
+  }
+  #post-content{
+    margin-bottom: 2em;
+    img{
+      margin: 1em;
+    }
+  }
+  #post-tags{
+    color: $primary-color;
+    margin: 0 auto;
+  }
+  #post-comments{
+    margin: 2em auto;
+    h4{
+      color: $primary-color;
+      margin-bottom: 0;
+    }
+    hr{
+      margin: 1em auto;
+    }
+  }
+  #posted-comments{
+    h5{
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 480px){
+    #post-content{
+      text-align: justify;
+    }
+    h1{
+      font-weight: bold;
+    }
+    h4{
+      font-weight: bold;
+    }
   }
 }

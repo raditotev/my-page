@@ -10,7 +10,11 @@
   <div class="small-10 small-centered medium-8 medium-centered">
     <h4><%= link_to project.title, project %></h4>
     <p class="project-img"><%= image_tag project.screenshot.url %></p>
-    <p><%= link_to fa_icon("arrow-right 1x", text: "Details", right: true), project %></p>
+    <div class="text-right">
+      <p class="project-details">
+        <%= link_to fa_icon("arrow-right 1x", text: "Details", right: true), project %>
+      </p>
+    </div>
 </div>
 <% end %>
 </div>

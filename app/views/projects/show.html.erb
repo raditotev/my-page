@@ -1,16 +1,24 @@
 <div id="show-project">
   <div class="row">
-    <div class="small-8 small-centered">
-      <h1 class="text-center"><%= @project.title %></h1>
+    <div class="small-10 small-centered medium-8 medium-centered text-center">
+      <h1><%= @project.title %></h1>
+      </div>
+      <div class="small-12 medium-8 medium-centered">
       <p>
         <%= image_tag @project.screenshot.url %>
       </p>
+      </div>
+      <div class="small-10 small-centered medium-8 medium-centered" id="project-descriptio">
       <p>
         <%= @project.description %>
       </p>
       <p class="text-center" id="project-links">
+      <% if @project.github_url %>
         <%= link_to fa_icon("github 3x"), @project.github_url, title: "Source code", target: "_blank" %>
+      <% end %>
+      <% if @project.demo_url %>
         <%= link_to fa_icon("desktop 3x"), @project.demo_url, title: "Live demo", target: "_blank" %>
+      <% end %>
       </p>
     </div>
   </div>

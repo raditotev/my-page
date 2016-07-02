@@ -32,11 +32,15 @@ body{
   span{
     font-family: 'Istok Web', sans-serif;
   }
+  .title-bar-title{
+    font-family: 'Istok Web', sans-serif;
+    font-size: 1.2em;
+  }
 }
 
 .navbar{
   background-color: $primary-color;
-  margin-bottom: 5%;
+  margin-bottom: 3.5em;
   a{
     color: white;
     font-weight: bold;

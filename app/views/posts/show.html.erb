@@ -1,6 +1,6 @@
 <div id="show-post">
   <div class="row">
-    <div class="small-8 small-centered">
+    <div class="small-10 small-centered">
     <div class="text-center" id="post-header">
       <h1><%= @post.title %></h1>
       <p><%= @post.created_at.strftime("%e %B, %Y") %></p>
@@ -8,16 +8,16 @@
       <div id="post-content">
         <%= @post.content.html_safe %>
       </div>
-      <p>
-        <strong>Tags</strong> <br>
+      <p id="post-tags">
+        <strong><%= fa_icon("tags 1x") %></strong>
         <%= raw tag_links(@post.all_tags) %>
       </p>
-      <div id="comments_form">
-        <h5>Comments</h5>
+      <div id="post-comments">
+        <h4>Comments</h4>
         <hr>
         <%= render 'comments/form' %>
       </div>
-      <div id="comments">
+      <div id="posted-comments">
         <%= render @comments %>
       </div>
     </div>
