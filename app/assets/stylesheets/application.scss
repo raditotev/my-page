@@ -149,13 +149,28 @@ body{
 
 .portfolio{
   background-color: #111111;
+  a{
+    &:hover{
+      color: #EB914F;
+    }
+  }
 }
 
 .blog{
   background-color: #2A4743;
+  a{
+    &:hover{
+      color: #CDC19F;
+    }
+  }
 }
 
 .contact{
   background-color: #2F221A;
+  a{
+    &:hover{
+      color: #CDC19F;
+    }
+  }
 }
 
