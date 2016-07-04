@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root 'pages#landing_page'
 
   mount Ckeditor::Engine => '/ckeditor'
-  resources :posts, except: :index do
+  resources :posts, except: [:index, :edit] do
     resources :comments, only: [:create, :destroy]
   end
-  resources :projects, except: :index
+  resources :projects, except: [:index, :edit]
   resources "contacts", only: :create
   get 'contact' => 'contacts#new', as: :contact
   get 'about' => 'pages#about'
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'admin/projects' => 'admin#projects'
   get 'admin/posts' => 'admin#posts'
   get 'admin/comments' => 'admin#comments'
+  get 'admin/projects/:id/edit' => 'projects#edit', as: :edit_project
+  get 'admin/posts/:id/edit' => 'posts#edit', as: :edit_post
   get 'download_cv' => 'pages#download_cv'
 
 
