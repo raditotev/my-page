@@ -12,39 +12,51 @@
 </head>
 
 <body>
-
-  <div class="container">
+<!-- Header -->
+  <div class="container" id="admin-header">
     <div class="row">
-      <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
+      <div class="small-10 small-centered">
+        <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
+        <!-- Small screen menu button -->
+        <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium" id="admin-title-bar">
+          <button class="menu-icon" type="button" data-toggle></button>
+          <div class="title-bar-title">Menu</div>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- Error messages -->
   <div class="row text-center">
     <div id="notice">
-        <%= render 'shared/flash_messages' %>
-      </div>
-  </div>
-  <div class="row" id="wrapper">
-    <!-- NAVIGATION -->
-    <div class="small-4 columns"  id="side_nav">
-      <ul class="vertical menu">
-        <li>
-          <%= link_to "Projects", admin_projects_path %>
-          <ul class="menu vertical nested">
-            <li><%= link_to "New", new_project_path, class: "text-color-success", title: "Create project" %></li>
-          </ul>
-        </li>
-        <li>
-          <%= link_to "Posts", admin_posts_path %>
-          <ul class="menu vertical nested">
-            <li><%= link_to "New", new_post_path, class: "text-color-success", title: "Create post" %></li>
-          </ul>
-        </li>
-      </ul>
-
+      <%= render 'shared/flash_messages' %>
     </div>
-    <!-- MAIN -->
-    <div class="small-8 columns"  id="main">
-      <%= yield %>
+  </div>
+  <!-- Main -->
+  <div class="row" id="admin-home">
+  <!-- Navigation -->
+    <div class="small-0">
+      <div class="medium-2 columns">
+        <ul class="menu vertical" id="menu">
+            <li>
+              <%= link_to "Projects", admin_projects_path %>
+              <ul class="menu vertical nested">
+                <li><%= link_to fa_icon("plus 1x", text: "Project"), new_project_path, class: "text-color-success", title: "Create project" %></li>
+              </ul>
+            </li>
+            <li>
+              <%= link_to "Posts", admin_posts_path %>
+              <ul class="menu vertical nested">
+                <li><%= link_to  fa_icon("plus 1x", text: "Post"), new_post_path, class: "text-color-success", title: "Create post" %></li>
+              </ul>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="medium-10 columns">
+      <div class="small-10 small-centered">
+        <%= yield %>
+      </div>
     </div>
   </div>
 </body>

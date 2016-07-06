@@ -1,27 +1,30 @@
-<div class="row text-center">
-<% if @unread_comments > 0 %>
-  <h5 id="unread-comments">
-<% else %>
-  <h5>
-<% end %>
-  <%= link_to generate_comments_text(@unread_comments), admin_comments_path %>
-  </h5>
+<!-- Comments -->
+<div class="row text-center" id="admin-comments">
+  <% if @unread_comments > 0 %>
+    <h5 id="unread-comments">
+      <%= link_to generate_comments_text(@unread_comments), admin_comments_path %>
+    </h5>
+  <% else %>
+    <h5>
+      <%= link_to generate_comments_text(@unread_comments), admin_comments_path %>
+    </h5>
+  <% end %>
 </div>
-<div class="row">
-  <div class="small-6 columns">
-    <h2>Projects</h2>
-    <% @projects.each do |project| %>
-    <h3><%= link_to project.title, project, target: "_blank" %></h3>
-    <h6 class="subheader"><%= time_ago_in_words(project.created_at) %> ago</h6>
-    <% end %>
-  </div>
-  <div class="small-6 columns">
-    <h2>Posts</h2>
-    <div class="row">
-      <% @posts.each do |post| %>
-      <h3><%= link_to post.title, post, target: "_blank" %></h3>
-      <h6 class="subheader"><%= time_ago_in_words(post.created_at) %> ago</h6>
-      <% end %>
+
+<!-- Analytics -->
+<div class="row" id="analytics">
+  <div class="large-6 columns">
+    <div class="small-10 small-centered medium-8 medium-centered">
+    <!-- <a href="https://docs.google.com/spreadsheets/d/1FgbN3QutTwoj7ZCFLTjeI4S2KjG2Mlyt6Es7CoQA6e4/pubchart?oid=1734889230&amp;format=interactive" target="_blank">
+      <img src="https://docs.google.com/spreadsheets/d/1FgbN3QutTwoj7ZCFLTjeI4S2KjG2Mlyt6Es7CoQA6e4/pubchart?oid=1734889230&amp;format=image" alt="This Week vs Last Week">
+    </a> -->
     </div>
+  </div>
+  <div class="large-6 columns">
+  <div class="small-10 small-centered medium-8 medium-centered">
+    <!-- <a href=https://docs.google.com/spreadsheets/d/1FgbN3QutTwoj7ZCFLTjeI4S2KjG2Mlyt6Es7CoQA6e4/pubchart?oid=1292802990&amp;format=interactive" target="_blank">
+      <img src="https://docs.google.com/spreadsheets/d/1FgbN3QutTwoj7ZCFLTjeI4S2KjG2Mlyt6Es7CoQA6e4/pubchart?oid=1292802990&amp;format=image" alt="This Week vs Last Week">
+    </a> -->
+  </div>
   </div>
 </div>

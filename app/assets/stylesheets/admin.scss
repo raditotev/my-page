@@ -17,23 +17,36 @@ $light_orange: #AA5F39;
   }
 }
 
-#wrapper{
-  margin-top: 20px;
-}
-
-#side_nav{
-  .menu li a{
-    font-size: 18px;
-    font-weight: bold;
-    outline: 0;
-    &:hover{
-      background: transparent;
-      color: $blue;
-    }
+#admin-header{
+  h1{
+    display: inline-block;
   }
 }
 
-#main{
+#admin-title-bar{
+  float: right;
+  display: inline-block;
+  text-align: right;
+  background: $blue;
+}
+
+.menu li a{
+  display: inline-block;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  outline: 0;
+  &:hover{
+    background: transparent;
+    color: $blue;
+  }
+}
+
+#admin-home{
+  margin-top: 2em;
+  .small-centered{
+    width: 100%;
+  }
   h2{
     color: $blue;
     font-weight: bold;
@@ -68,14 +81,37 @@ $light_orange: #AA5F39;
   }
 }
 
-// Unread comments
-
-.read-false{
-  background: #ffe6cc;
-}
-
-#unread-comments{
-  a{
-    color: $primary-color;
+#admin-comments{
+  margin-top: 2em;
+  // Unread comments
+  .read-false{
+    background: #ffe6cc;
+  }
+  #unread-comments{
+    a{
+      color: $primary-color;
+    }
   }
 }
+
+#analytics{
+  .medium-centered{
+    width: 100%;
+  }
+  .columns{
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 640px){
+  #admin-home{
+    margin-top: 0.5em;
+  }
+    #menu{
+      text-align: right;
+      background: $blue;
+    }
+    .menu li a{
+      color: #FFF;
+    }
+  }

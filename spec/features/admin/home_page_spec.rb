@@ -12,9 +12,6 @@ end
     expect(page).to have_css "h1", text: "Admin Panel"
     expect(page).to have_css "a", text: "Projects"
     expect(page).to have_css "a", text: "Posts"
-    expect(page).to have_css "a", text: "New"
-    expect(page).to have_css "h2", text: "Projects"
-    expect(page).to have_css "h2", text: "Posts"
   end
 
   scenario "has link to projects" do
