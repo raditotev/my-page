@@ -18,7 +18,7 @@
       <div class="small-10 small-centered medium-12">
         <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
         <!-- Small screen menu button -->
-        <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium" id="admin-title-bar">
+        <div class="title-bar" data-responsive-toggle="menu-admin" data-hide-for="medium" id="admin-title-bar">
           <button class="menu-icon" type="button" data-toggle></button>
           <div class="title-bar-title">Menu</div>
         </div>
@@ -36,7 +36,7 @@
   <!-- Navigation -->
     <div class="small-0">
       <div class="medium-2 columns">
-        <ul class="menu vertical" id="menu">
+        <ul class="menu vertical" id="menu-admin">
             <li>
               <%= link_to "Projects", admin_projects_path %>
               <ul class="menu vertical nested">

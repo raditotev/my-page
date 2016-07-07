@@ -136,6 +136,7 @@ body{
 
 .about, .portfolio, .blog, .contact{
   @extend .navbar;
+  margin-bottom: 0;
 }
 
 .about{
