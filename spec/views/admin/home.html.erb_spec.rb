@@ -1,23 +1,22 @@
 require 'spec_helper'
 
 RSpec.describe "admin/home", type: :view do
-  before(:each) do
-    assign(:posts, [create(:post, title: "Post Title1"), create(:post, title: "Post Title2")])
-    assign(:projects, [create(:project, title: "Project Title1"), create(:project, title: "Project Title2")])
+
+  it "generates text for 0 unread comments" do
+    assign(:unread_comments, 0)
+    render
+    assert_select "h5", :text => "There are no new comments."
+  end
+
+   it "generates text for 1 unread comment" do
     assign(:unread_comments, 1)
+    render
+    assert_select "h5", :text => "There is 1 new comment."
   end
 
-  it "renders a list of posts" do
+  it "generates text for multiple unread comment" do
+    assign(:unread_comments, 3)
     render
-    assert_select "h3", :text => "Post Title1"
-    assert_select "h6", :text => "less than a minute ago".to_s, count: 4 # 2 Posts + 2 Projects
-    assert_select "h3", :text => "Post Title2"
-    assert_select "h6", :text => "less than a minute ago"
-  end
-
-   it "renders a list of projects" do
-    render
-    assert_select "h3", :text => "Project Title1"
-    assert_select "h3", :text => "Project Title2"
+    assert_select "h5", :text => "There are 3 new comments."
   end
 end

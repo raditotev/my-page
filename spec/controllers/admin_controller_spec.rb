@@ -23,18 +23,11 @@ describe AdminController do
       expect(response).to redirect_to new_admin_session_path
     end
 
-    it "assigns last 7 projects as @projects" do
-      project = {}
-      (1..8).each {|n| project[n] = create(:project, title: "Title#{n}")}
+    it "assigns unread comments as @unread_comments" do
+      post = create(:post)
+      comment = create(:comment, post: post)
       get :home, {}, valid_session
-      expect(assigns(:projects)).to eq([project[7], project[6], project[5], project[4], project[3], project[2], project[1]])
-    end
-
-    it "assigns last 7 posts as @posts" do
-      post = {}
-      (1..8).each {|n| post[n] = create(:post, title: "Title#{n}")}
-      get :home, {}, valid_session
-      expect(assigns(:posts)).to eq([post[7], post[6], post[5], post[4], post[3], post[2], post[1]])
+      expect(assigns(:unread_comments)).to eq 1
     end
   end
 
