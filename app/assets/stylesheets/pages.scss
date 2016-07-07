@@ -39,15 +39,20 @@
     margin-bottom: 1.5em;
     border-radius: 2px;
   }
-  .medium-4{
-    margin-bottom: 2em;
-    padding: 0 auto;
+  span{
+    display: block;
+    margin-left: 2em;
+    font-size: 1.5em;
+    color: #244123;
     a{
-      font-size: 1.5em;
       &:hover{
         color: #234922;
       }
     }
+  }
+  .medium-4{
+    margin-bottom: 2em;
+    padding: 0 auto;
   }
 
 }

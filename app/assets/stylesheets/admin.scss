@@ -30,30 +30,20 @@ $light_orange: #AA5F39;
   background: $blue;
 }
 
-.menu li a{
-  display: inline-block;
-  color: #000;
-  font-size: 18px;
-  font-weight: bold;
-  outline: 0;
-  &:hover{
-    background: transparent;
-    color: $blue;
-  }
-}
-
 #admin-home{
   margin-top: 2em;
   .small-centered{
     width: 100%;
   }
-  h2{
-    color: $blue;
+  .menu li a{
+    display: inline-block;
+    color: #000;
+    font-size: 18px;
     font-weight: bold;
-  }
-  h3{
-    a{
-      color: #000;
+    outline: 0;
+    &:hover{
+      background: transparent;
+      color: $blue;
     }
   }
   .controls{
