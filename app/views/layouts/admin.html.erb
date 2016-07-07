@@ -48,6 +48,9 @@
               <ul class="menu vertical nested">
                 <li><%= link_to  fa_icon("plus 1x", text: "Post"), new_post_path, class: "text-color-success", title: "Create post" %></li>
               </ul>
+              <ul>
+                <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
+              </ul>
             </li>
           </ul>
       </div>
