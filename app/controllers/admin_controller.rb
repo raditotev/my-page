@@ -3,8 +3,6 @@ class AdminController < ApplicationController
   after_action :mark_comments_as_read, only: :comments
 
   def home
-    @projects = Project.last(7)
-    @posts = Post.last(7)
     @unread_comments = Comment.where(read: false).count
   end
 

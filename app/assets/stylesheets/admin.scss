@@ -95,11 +95,18 @@ $light_orange: #AA5F39;
 }
 
 #analytics{
+  margin-top: 2em;
+  .row{
+    margin-bottom: 1em;
+  }
   .medium-centered{
     width: 100%;
   }
   .columns{
     margin-bottom: 1em;
+  }
+  img{
+    border-radius: 2px;
   }
 }
 
