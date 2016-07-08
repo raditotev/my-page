@@ -39,6 +39,8 @@ body{
 }
 
 .navbar{
+  position: fixed;
+  top: 0;
   background-color: $primary-color;
   margin-bottom: 3.5em;
   a{
@@ -141,8 +143,12 @@ body{
 }
 
 .about, .portfolio, .blog, .contact{
-  @extend .navbar;
+  background-color: $primary-color;
   margin-bottom: 0;
+  a{
+    color: white;
+    font-weight: bold;
+  }
 }
 
 .about{
