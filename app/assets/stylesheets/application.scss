@@ -39,8 +39,6 @@ body{
 }
 
 .navbar{
-  position: fixed;
-  top: 0;
   background-color: $primary-color;
   margin-bottom: 3.5em;
   a{
@@ -132,10 +130,6 @@ body{
 /*Navigation Bar*/
 
 .top-bar{
-  width: 100%;
-  top: 0px;
-  position: -webkit-sticky;
-  position: sticky;
   ul{
     display: inline-block;
     background-color: transparent;
