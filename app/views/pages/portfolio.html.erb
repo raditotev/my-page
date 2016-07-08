@@ -7,7 +7,7 @@
     <h3 class="text-center">Projects</h3>
   </div>
   <% @projects.each do |project| %>
-  <div class="small-10 small-centered medium-8 medium-centered">
+  <div class="small-10 small-centered medium-8 medium-centered" id="<%= project.slug %>">
     <h4><%= link_to project.title, project %></h4>
     <p class="project-img"><%= image_tag project.screenshot.url %></p>
     <div class="text-right">

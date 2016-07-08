@@ -29,8 +29,8 @@
       <div class="medium-6 medium-centered text-center">
           <ul class="menu">
             <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Portfolio", portfolio_path %></li>
-            <li><%= link_to "Blog", blog_path %></li>
+            <li><%= link_to "Portfolio", @project ? portfolio_path(anchor: @project.slug) : portfolio_path %></li>
+            <li><%= link_to "Blog", @post ? blog_path(anchor: @post.slug) : blog_path %></li>
             <li><%= link_to "Contact", contact_path %></li>
           </ul>
       </div>

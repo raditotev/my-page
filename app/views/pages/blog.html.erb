@@ -7,7 +7,7 @@
     <h3 class="text-center">Posts</h3>
   </div>
   <% @posts.each do |post| %>
-  <div class="small-10 small-centered medium-8 medium-centered">
+  <div class="small-10 small-centered medium-8 medium-centered" id="<%= post.slug %>">
     <h4><%= link_to post.title, post %></h4>
     <p>
       <%= get_first_paragraph post.content %>
