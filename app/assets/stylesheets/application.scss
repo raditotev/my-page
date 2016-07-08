@@ -97,7 +97,7 @@ body{
   @include background($position: 80%);
   @media screen and (max-width: 600px){
     height: 30%;
-    @include background($size: initial, $position: 30%);
+    @include background($position: 30%);
   }
 }
 
@@ -129,9 +129,15 @@ body{
 
 /*Navigation Bar*/
 
-.top-bar ul{
-  display: inline-block;
-  background-color: transparent;
+.top-bar{
+  width: 100%;
+  top: 0px;
+  position: -webkit-sticky;
+  position: sticky;
+  ul{
+    display: inline-block;
+    background-color: transparent;
+  }
 }
 
 .about, .portfolio, .blog, .contact{

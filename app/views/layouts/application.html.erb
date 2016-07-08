@@ -14,22 +14,17 @@
 </head>
 
 <body>
-<% if content_for?(:id) %>
-<div id="<%= yield :id %>-banner">
-  <div class="row">
-  <h1><%= content_for?(:heading) ? yield(:heading) : yield(:title) %></h1>
-  <h5><%= yield :subtitle %></h5>
+  <% if content_for?(:id) %>
+  <div id="<%= yield :id %>-banner">
+    <div class="row">
+    <h1><%= content_for?(:heading) ? yield(:heading) : yield(:title) %></h1>
+    <h5><%= yield :subtitle %></h5>
+    </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
   <!-- Navigation -->
-  <div class="title-bar <%= content_for?(:id) ? yield(:id) : "navbar" %>" data-responsive-toggle="menu" data-hide-for="medium">
-    <button class="menu-icon" type="button" data-toggle></button>
-    <div class="title-bar-title">Menu</div>
-  </div>
-
-  <div class="top-bar <%= content_for?(:id) ? yield(:id) : "navbar" %>" id="menu">
+  <div class="top-bar <%= content_for?(:id) ? yield(:id) : "navbar" %>">
     <div class="row">
       <div class="medium-6 medium-centered text-center">
           <ul class="menu">
@@ -41,6 +36,7 @@
       </div>
     </div>
   </div>
+
   <!-- Error messages -->
   <div class="row">
     <div class="small-8 small-centered medium-4 medium-centered">
