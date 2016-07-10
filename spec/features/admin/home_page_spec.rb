@@ -10,8 +10,13 @@ end
   scenario "visit" do
     expect(page).to have_title "Admin"
     expect(page).to have_css "h1", text: "Admin Panel"
-    expect(page).to have_css "a", text: "Projects"
-    expect(page).to have_css "a", text: "Posts"
+    expect(page).to have_link "Projects"
+    expect(page).to have_link "Posts"
+    expect(page).to have_css "img[alt='Users and Pages per Session']"
+    expect(page).to have_css "img[alt='This Week vs Last Week']"
+    expect(page).to have_css "img[alt='Top Browsers']"
+    expect(page).to have_css "img[alt='Top countries chart']"
+    expect(page).to have_css "img[alt='Top countries map']"
   end
 
   scenario "has link to projects" do

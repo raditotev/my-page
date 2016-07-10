@@ -8,6 +8,18 @@ feature "Posts page" do
     visit admin_posts_path
   end
 
+  subject { page }
+
+  it { is_expected.to have_link "Projects" }
+  it { is_expected.to have_link "Project" }
+  it { is_expected.to have_link "Posts" }
+  it { is_expected.to have_link "Post" }
+  it { is_expected.to have_link "#{@post.title}" }
+  it { is_expected.to have_link "Show" }
+  it { is_expected.to have_link "Edit" }
+  it { is_expected.to have_link "Delete" }
+  it { is_expected.to have_css "h4", text: "#{@post.title}" }
+
   scenario "redirects to home when Admin Panel is clicked" do
     click_link 'Dashboard'
     expect(current_path).to eq(admin_path)
@@ -24,14 +36,16 @@ feature "Posts page" do
   end
 
   scenario "has link deleting post", js: true do
-    # expect { click_on 'Delete' }.to change(Post, :count).by(-1)
-    # expect(page).to have_content "Post was successfully deleted."
-    # expect(page).to_not have_content @post.title
     click_link("Delete")
     a = page.driver.browser.switch_to.alert
     expect(a.text).to eq("Are you sure?")
     a.accept
     expect(page).to have_content("Post was successfully deleted.")
     expect(page).to_not have_content @post.title
+  end
+
+  scenario "has log out" do
+    click_link 'Log out'
+    expect(current_path).to eql root_path
   end
 end
