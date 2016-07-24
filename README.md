@@ -20,8 +20,8 @@ Paperclip
 CKEditor  
 AWS-SDK  
 Mail form  
-*Friendly ID
-*Factory Girl
-Shoulda Matchers
-Database Cleaner
-Letter Opener
+Friendly ID  
+Factory Girl  
+Shoulda Matchers  
+Database Cleaner  
+Letter Opener  
