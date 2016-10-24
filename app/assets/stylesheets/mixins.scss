@@ -1,0 +1,39 @@
+@mixin dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin absolute-position($X, $Y) {
+  position: absolute;
+  top: $X;
+  left: $Y;
+  transform: translate(-($X), -($Y));
+}
+
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex-direction($value){
+  -webkit-flex-direction: $value;
+   flex-direction: $value;
+}
+
+@mixin justify-content($value){
+  -webkit-justify-content: $value;
+   justify-content: $value;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}

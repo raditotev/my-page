@@ -6,37 +6,33 @@
 
   <title><%= content_for?(:title) ? "Admin | #{yield(:title)}" : "Admin" %></title>
 
-  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag    "admin" %>
   <%= javascript_include_tag "admin", 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-<!-- Header -->
-  <div class="container" id="admin-header">
-    <div class="row">
-      <div class="small-10 small-centered medium-12">
-        <h1><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
-        <!-- Small screen menu button -->
-        <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium" id="admin-title-bar">
-          <button class="menu-icon" type="button" data-toggle></button>
-          <div class="title-bar-title">Menu</div>
-        </div>
+
+  <header>
+    <div class="container-fluid" id="admin-header">
+      <div class="container">
+        <h1 class="pull-left"><%= link_to "Admin Panel", admin_path, title: "Dashboard" %></h1>
+        <div id="menu" class="pull-right"><%= fa_icon("bars") %></div>
       </div>
     </div>
-  </div>
-  <!-- Error messages -->
-  <div class="row text-center">
-    <div id="notice">
+  </header>
+
+  <section id="notices">
+    <div id="notice-message" class="container">
       <%= render 'shared/flash_messages' %>
     </div>
-  </div>
-  <!-- Main -->
-  <div class="row" id="admin-home">
-  <!-- Navigation -->
-    <div class="small-0">
-      <div class="medium-2 columns">
-        <ul class="menu vertical" id="menu">
+  </section>
+
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-4" id="admin-links">
+          <ul class="menu vertical">
             <li>
               <%= link_to "Projects", admin_projects_path %>
               <ul class="menu vertical nested">
@@ -48,19 +44,17 @@
               <ul class="menu vertical nested">
                 <li><%= link_to  fa_icon("plus 1x", text: "Post"), new_post_path, class: "text-color-success", title: "Create post" %></li>
               </ul>
-              <ul>
-                <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
-              </ul>
+            </li>
+            <li>
+              <%= link_to "Log out", destroy_admin_session_path, method: :delete %>
             </li>
           </ul>
+        </div>
+        <div class="col-xs-8" id="yield">
+          <%= yield %>
+        </div>
       </div>
     </div>
-    <!-- Content -->
-    <div class="medium-10 columns">
-      <div class="small-10 small-centered">
-        <%= yield %>
-      </div>
-    </div>
-  </div>
+  </main>
 </body>
 </html>

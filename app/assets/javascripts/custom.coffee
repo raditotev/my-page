@@ -6,6 +6,6 @@ $ ->
   setTimeout flashCallback, 3000
 
   $('textarea').click ->
-    $(this).animate({height: '100px'})
+    $(this).animate({height: '200px'})
 
 

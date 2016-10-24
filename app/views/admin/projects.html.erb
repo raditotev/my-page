@@ -1,14 +1,16 @@
 <% provide(:title, "Projects") %>
 
-<% @projects.each do |project| %>
-<div class="row">
-  <div class="small-8 columns">
-    <h4><%= link_to project.title, project %></h4>
+<div id="projects">
+  <% @projects.each do |project| %>
+  <div class="row">
+    <div class="col-xs-8">
+      <h3><%= link_to project.title, project %></h3>
+    </div>
+    <div class="col-xs-4 controls">
+      <%= link_to fa_icon("eye 2x"), project, target: "_blank", title: "Show" %>
+      <%= link_to fa_icon("pencil 2x"), edit_project_path(project), title: "Edit" %>
+      <%= link_to fa_icon("trash 2x"), project, title: "Delete", method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
   </div>
-  <div class="small-4 columns controls">
-    <%= link_to fa_icon("eye 2x"), project, target: "_blank", title: "Show" %>
-    <%= link_to fa_icon("pencil 2x"), edit_project_path(project), target: "_blank", title: "Edit" %>
-    <%= link_to fa_icon("trash 2x"), project, title: "Delete", method: :delete, data: { confirm: "Are you sure?" } %>
-  </div>
+  <% end %>
 </div>
-<% end %>

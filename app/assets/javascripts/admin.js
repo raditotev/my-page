@@ -10,3 +10,9 @@
 //= require ckeditor/plugins/widget/lang/en
 //= require ckeditor/plugins/codesnippet/lib/highlight/highlight.pack
 //= require_directory .
+
+$(document).ready(function(){
+  $('#menu').click(function(){
+    $('#admin-links').toggle();
+  });
+});

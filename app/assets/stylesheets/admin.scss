@@ -1,5 +1,11 @@
-@import "settings";
+@import "global_variables";
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import "mixins";
+
+@import "global_settings";
 
 $light_yellow: #D3CF6D;
 $yellow: #FFB514;
@@ -9,67 +15,168 @@ $red: #D38A6D;
 $white: #fefefe;
 $blue: #615391;
 $light_orange: #AA5F39;
+$primary-color: #615391;
 
-.container{
-  background: $blue;
-  h1 a{
-  color: #fff;
-  }
+header{
+  margin-bottom: 50px;
 }
 
 #admin-header{
+  height: 100px;
+  background-color: $blue;
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
   h1{
-    display: inline-block;
+    a{
+      color: #fff;
+    }
+  }
+  #menu{
+    display: none;
+    margin-top: 28px;
   }
 }
 
-#admin-title-bar{
-  float: right;
-  display: inline-block;
-  text-align: right;
-  background: $blue;
+#admin-links{
+  ul{
+    padding-left: 0;
+    li{
+      a{
+        font-size: 1.2em;
+        color: #000;
+        font-weight: bold;
+      }
+      ul li{
+        padding-left: 20px;
+        a{
+          color: $green;
+        }
+      }
+    }
+  }
 }
 
-#admin-home{
-  margin-top: 2em;
-  .small-centered{
-    width: 100%;
+.controls{
+  a{
+    margin: 0 3px;
   }
-  .menu li a{
-    display: inline-block;
-    color: #000;
-    font-size: 18px;
-    font-weight: bold;
-    outline: 0;
+  .fa-eye{
+    color: darken($blue, 20%);
     &:hover{
-      background: transparent;
       color: $blue;
     }
   }
-  .controls{
-    a{
-      margin: 0 3px;
+  .fa-pencil{
+    color: $light_yellow;
+    &:hover{
+      color: $yellow;
     }
-    .fa-eye{
-      color: darken($blue, 20%);
-      &:hover{
-        color: $blue;
-      }
-    }
-    .fa-pencil{
-      color: $light_yellow;
-      &:hover{
-        color: $yellow;
-      }
-    }
-    .fa-trash{
-      color: $red;
-      &:hover{
-        color: red;
-      }
+  }
+  .fa-trash{
+    color: $red;
+    &:hover{
+      color: red;
     }
   }
 }
+
+#projects, #posts{
+  h3{
+    margin-top: 0;
+    a{
+      color: #000;
+    }
+    .row{
+      margin-bottom: 1em;
+    }
+  }
+}
+
+#edit-project{
+  margin-bottom: 50px;
+  textarea{
+    min-height: 150px;
+  }
+}
+
+@media (max-width:767px){
+  #admin-header{
+    .container{
+      width: 100%;
+    }
+    #menu{
+      display: inline-block;
+    }
+  }
+  #yield{
+    width: 100vw;
+  }
+  #admin-links{
+    display: none;
+  }
+}
+
+// .container{
+//   background: $blue;
+//   h1 a{
+//   color: #fff;
+//   }
+// }
+
+// #admin-header{
+//   h1{
+//     display: inline-block;
+//   }
+// }
+
+// #admin-title-bar{
+//   float: right;
+//   display: inline-block;
+//   text-align: right;
+//   background: $blue;
+// }
+
+// #admin-home{
+//   margin-top: 2em;
+//   .small-centered{
+//     width: 100%;
+//   }
+//   .menu li a{
+//     display: inline-block;
+//     color: #000;
+//     font-size: 18px;
+//     font-weight: bold;
+//     outline: 0;
+//     &:hover{
+//       background: transparent;
+//       color: $blue;
+//     }
+//   }
+//   .controls{
+//     a{
+//       margin: 0 3px;
+//     }
+//     .fa-eye{
+//       color: darken($blue, 20%);
+//       &:hover{
+//         color: $blue;
+//       }
+//     }
+//     .fa-pencil{
+//       color: $light_yellow;
+//       &:hover{
+//         color: $yellow;
+//       }
+//     }
+//     .fa-trash{
+//       color: $red;
+//       &:hover{
+//         color: red;
+//       }
+//     }
+//   }
+// }
 
 #admin-comments{
   margin-top: 2em;
@@ -84,31 +191,31 @@ $light_orange: #AA5F39;
   }
 }
 
-#analytics{
-  margin-top: 2em;
-  .row{
-    margin-bottom: 1em;
-  }
-  .medium-centered{
-    width: 100%;
-  }
-  .columns{
-    margin-bottom: 1em;
-  }
-  img{
-    border-radius: 2px;
-  }
-}
+// #analytics{
+//   margin-top: 2em;
+//   .row{
+//     margin-bottom: 1em;
+//   }
+//   .medium-centered{
+//     width: 100%;
+//   }
+//   .columns{
+//     margin-bottom: 1em;
+//   }
+//   img{
+//     border-radius: 2px;
+//   }
+// }
 
-@media screen and (max-width: 640px){
-  #admin-home{
-    margin-top: 0.5em;
-  }
-    #menu{
-      text-align: right;
-      background: $blue;
-    }
-    .menu li a{
-      color: #FFF;
-    }
-  }
+// @media screen and (max-width: 640px){
+//   #admin-home{
+//     margin-top: 0.5em;
+//   }
+//     #menu{
+//       text-align: right;
+//       background: $blue;
+//     }
+//     .menu li a{
+//       color: #FFF;
+//     }
+//   }
