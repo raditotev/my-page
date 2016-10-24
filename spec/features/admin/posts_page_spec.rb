@@ -18,7 +18,7 @@ feature "Posts page" do
   it { is_expected.to have_link "Show" }
   it { is_expected.to have_link "Edit" }
   it { is_expected.to have_link "Delete" }
-  it { is_expected.to have_css "h4", text: "#{@post.title}" }
+  it { is_expected.to have_css "h3", text: "#{@post.title}" }
 
   scenario "redirects to home when Admin Panel is clicked" do
     click_link 'Dashboard'

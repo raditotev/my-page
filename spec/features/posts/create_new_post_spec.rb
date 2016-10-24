@@ -22,8 +22,7 @@ feature "Create new post" do
 
   scenario "with incorect destails" do
     click_button 'Create Post'
-    expect(page).to have_css "h2", text: "2 errors prohibited this post from being saved:"
-    expect(page).to have_css "li", text: "Title can't be blank"
-    expect(page).to have_css "li", text: "Content can't be blank"
+    expect(page).to have_css "span", text: "can't be blank", count: 2
+    expect(page).to have_css ".has-error", count: 2
   end
 end

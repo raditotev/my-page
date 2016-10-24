@@ -16,9 +16,7 @@ feature "Create new project" do
 
   scenario "with incorect destails" do
     click_button 'Create Project'
-    expect(page).to have_css "h2", text: "3 errors prohibited this project from being saved:"
-    expect(page).to have_css "li", text: "Title can't be blank"
-    expect(page).to have_css "li", text: "Description can't be blank"
-    expect(page).to have_css "li", text: "Screenshot can't be blank"
+    expect(page).to have_css "span", text: "can't be blank", count: 3
+    expect(page).to have_css ".has-error", count: 3
   end
 end

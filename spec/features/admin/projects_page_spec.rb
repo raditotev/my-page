@@ -18,7 +18,7 @@ subject { page }
   it { is_expected.to have_link "Show" }
   it { is_expected.to have_link "Edit" }
   it { is_expected.to have_link "Delete" }
-  it { is_expected.to have_css "h4", text: "#{@project.title}" }
+  it { is_expected.to have_css "h3", text: "#{@project.title}" }
 
 
   scenario "redirects to home when Admin Panel is clicked" do
