@@ -1,0 +1,89 @@
+#about-page{
+  h1{
+    font-size: 70px;
+    font-weight: 700;
+    text-shadow: 2px 2px 1px #000;
+  }
+  #hero-image{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -100;
+  }
+  #welcome-container{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+  }
+  #welcome{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    h1{
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+  #about{
+    background-color: #fff;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .table{
+      display: table;
+      height: 100%;
+    }
+    .table-cell{
+      display: table-cell;
+      float: none;
+    }
+    #logos{
+      height: 100%;
+      .row{
+        margin: 15px auto;
+      }
+      .fa{
+        font-size: 100px;
+      }
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  @media (max-width: 767px){
+    #hero-image{
+      top: -70px;
+      left: -250px;
+    }
+    #welcome{
+      font-size: 60px;
+    }
+    #about{
+        .table{
+        display: initial;
+      }
+      .table-cell{
+        display: initial;
+      }
+    }
+  }
+  @media (min-width: 457px) and (max-width: 740px){
+    #hero-image{
+      top: -100px;
+      left: -300px;
+    }
+    #welcome h1{
+      font-size: 40px;
+    }
+  }
+  @media (max-width: 456px){
+    #welcome{
+      top: 75%;
+      left: 20px;
+      h1{
+        font-size: 40px;
+      }
+    }
+  }
+}

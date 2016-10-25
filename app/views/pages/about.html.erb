@@ -1,54 +1,74 @@
 <% provide(:title, "About") %>
-<% provide(:id, "about") %>
-<% provide(:heading, "Radi Totev") %>
-<% provide(:subtitle, "Full Stack Developer") %>
-
-<div class="row" id="about-page">
-  <div class="small-10 small-centered">
-    <h3 class="text-center">Short Bio</h3>
-    <div class="row">
-      <div class="small-12 medium-4 columns">
-        <%= image_tag "avatar.jpeg", alt: "My Photo" %>
-        <h4>Radi Totev</h4>
-        <div>
-          <span>
-            <%= fa_icon("map-marker 1x", text: "London, UK") %>
-          </span>
-          <span>
-            <%= link_to fa_icon("google-plus 1x", text: "Google"), "https://plus.google.com/u/0/105018255652525229261/", target: "_blank" %>
-          </span>
-          <span>
-            <%= link_to fa_icon("linkedin-square 1x", text: "LinkedIn"), "https://uk.linkedin.com/in/radi-totev-9589b673", target: "_blank" %>
-          </span>
-          <span>
-            <%= link_to fa_icon("github 1x", text: "GitHub"), "https://github.com/raditotev", target: "_blank" %>
-          </span>
-          <span>
-            <%= link_to fa_icon("download 1x", text: "CV"), download_cv_url, target: "_blank", title: "Download CV" %>
-          </span>
+<div id="about-page">
+  <div id="hero-image">
+    <%= image_tag("big-image.png") %>
+  </div>
+  <div class="container">
+    <div class="row" id="welcome-container">
+      <div id="welcome">
+        <h1 class="wow animated lightSpeedIn">HEY, I'M RADI</h1>
+        <%= link_to "DOWNLOAD CV", download_cv_path,
+                                                            class: "btn btn-default wow animated fadeInUp",
+                                                            data: {'wow-delay': '1s'} %>
+      </div>
+    </div>
+  </div>
+  <div id="about">
+    <div class="container">
+      <div class="row table">
+        <div class="col-sm-6 wow animated slideInLeft table-cell">
+          <h3 class="text-center">Hi, and welcome to my page!</h3>
+          <p>
+            I'm a full stack developer creating apps using Bootstrap, Foundation, Javascript, jQuery, Ajax, RSpec, Capybara and Ruby on Rails.
+          </p>
+          <p>
+            I've created my first simple HTML page in 2001 as a hobby project. Later I continued experimenting with programming in my spare time by building projects using Dreamweaver or writing code in C for my Arduino experiments.
+          </p>
+          <p>
+             I've got seriously involved in web development in 2013, when I've decided I want to make a living as a programmer and dedicated my entire time achieving this goal. In doing so I've completed Udacity's "Intro to Programming" course and received their nanodegree. Next I've done numerous courses online: Codeacademy's "Python", "Ruby", "jQuery", "JavaScript", "Ruby on Rails" and FreeCodeCamp's "Front End Development" plus a ton of online tutorials or from books like Michael Hartl's "Ruby On Rails Tutotrial". In future, I would like to learn more about and work with MEAN Stack.
+          </p>
+          <p>
+            To find out more about my work visit my <%= link_to "github", "https://github.com/raditotev", target: "_blank" %> account or <%= link_to "portfolio", portfolio_path %>.
+          </p>
+          <p>
+            In my free time I love to travel, read books, spend time hanging with interesting people, hiking and working on electronic DIY projects. I'm an AOW diver and love the company of the sharks, mantas and other sea creatures big or small. Also I hope this summer (2016) I'll get my paragliding certificate. Wish me luck ;)
+          </p>
+          <p>
+           If you have any questions, <%= link_to "feel free to get in touch", contact_path, id: "contact-link" %>.
+         </p>
+        </div>
+      <div class="col-sm-6 table-cell">
+        <div id="logos" class="vertical-center">
+          <div class="row">
+            <div class="col-xs-4 text-center">
+              <%= image_tag("ruby.png", id: "ruby", class: "wow animated slideInLeft") %>
+            </div>
+            <div class="col-xs-4 text-center">
+              <%= image_tag("RoR.png", id: "ror", class: "wow animated slideInDown") %>
+            </div>
+            <div class="col-xs-4 text-center">
+              <%= image_tag("js.png", id: "js", class: "wow animated slideInRight") %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <%= image_tag("jquery.png", id: "jquery", class: "wow animated flipInY") %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4 text-center">
+              <%= fa_icon( "github" , class: "wow animated slideInLeft") %>
+            </div>
+            <div class="col-xs-4 text-center">
+              <%= image_tag("html5.png", class: "wow animated slideInUp") %>
+            </div>
+            <div class="col-xs-4 text-center">
+              <%= image_tag("css3.png", class: "wow animated slideInRight") %>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="small-12 medium-8 columns" id="intro">
-        <h4>Hi, and welcome to my page!</h4>
-        <p>
-          I'm a full stack developer creating apps using Bootstrap, Foundation, Javascript, jQuery, Ajax, RSpec, Capybara and Ruby on Rails.
-        </p>
-        <p>
-          I've created my first simple HTML page in 2001 as a hobby project. Later I continued experimenting with programming in my spare time by building projects using Dreamweaver or writing code in C for my Arduino experiments.
-        </p>
-        <p>
-           I've got seriously involved in web development in 2013, when I've decided I want to make a living as a programmer and dedicated my entire time achieving this goal. In doing so I've completed Udacity's "Intro to Programming" course and received their nanodegree. Next I've done numerous courses online: Codeacademy's "Python", "Ruby", "jQuery", "JavaScript", "Ruby on Rails" and FreeCodeCamp's "Front End Development" plus a ton of online tutorials or from books like Michael Hartl's "Ruby On Rails Tutotrial". In future, I would like to learn more about and work with MEAN Stack.
-        </p>
-        <p>
-          To find out more about my work visit my <%= link_to "github", "https://github.com/raditotev", target: "_blank" %> account or <%= link_to "portfolio", portfolio_path %>.
-        </p>
-        <p>
-          In my free time I love to travel, read books, spend time hanging with interesting people, hiking and working on electronic DIY projects. I'm an AOW diver and love the company of the sharks, mantas and other sea creatures big or small. Also I hope this summer (2016) I'll get my paragliding certificate. Wish me luck ;)
-        </p>
-        <p>
-         If you have any questions, <%= link_to "feel free to get in touch", contact_path, id: "contact-link" %>.
-       </p>
-     </div>
-   </div>
- </div>
+    </div>
+      </div>
+    </div>
 </div>

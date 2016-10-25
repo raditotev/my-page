@@ -1,9 +1,18 @@
 //= require jquery
+//= require bootstrap-sprockets
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require foundation
 //= require turbolinks
+//= require wow.min
 //= require_directory .
 
+var wow = new WOW ({
+  offset:       75,          // distance to the element when triggering the animation (default is 0)
+  mobile:       false,       // trigger animations on mobile devices (default is true)
+});
 
-$(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+
+  wow.init();
+});

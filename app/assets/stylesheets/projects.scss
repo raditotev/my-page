@@ -1,24 +1,24 @@
-@import "settings";
+// @import "settings";
 
-#show-project{
-  h1, a{
-    color: $primary-color;
-  }
-  img{
-    border-radius: 2px;
-    margin: 1em auto;
-  }
-  @media (max-width: 480px){
-    #project-description{
-      text-align: justify;
-    }
-  }
-}
+// #show-project{
+//   h1, a{
+//     color: $primary-color;
+//   }
+//   img{
+//     border-radius: 2px;
+//     margin: 1em auto;
+//   }
+//   @media (max-width: 480px){
+//     #project-description{
+//       text-align: justify;
+//     }
+//   }
+// }
 
-#project-links{
-  margin-top: 2em;
-  a{
-    margin: auto 1em;
-  }
-}
+// #project-links{
+//   margin-top: 2em;
+//   a{
+//     margin: auto 1em;
+//   }
+// }
 

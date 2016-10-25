@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'pages#landing_page'
+  # root 'pages#landing_page'
+  root 'pages#about'
 
   mount Ckeditor::Engine => '/ckeditor'
   resources :posts, except: [:index, :edit, :new] do
