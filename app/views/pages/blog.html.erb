@@ -1,19 +1,17 @@
 <% provide(:title, "Blog") %>
-<% provide(:id, "blog") %>
-<% provide(:subtitle, "I hope you'll find my articles useful") %>
 
-<div class="row" id="blog-page">
-  <div class="small-10 small-centered medium-8 medium-centered">
-    <h3 class="text-center">Posts</h3>
-  </div>
+
+<div id="blog-page">
+  <h1 class="text-center">Articles</h1>
+
   <% @posts.each do |post| %>
-  <div class="small-10 small-centered medium-8 medium-centered" id="<%= post.slug %>">
-    <h4><%= link_to post.title, post %></h4>
-    <p>
-      <%= get_first_paragraph post.content %>
-      <%= link_to "Continue reading...", post %>
-    </p>
-    <p class="tag-links"><%= raw tag_links(post.all_tags) %></p>
-</div>
-<% end %>
+    <div class="container">
+      <h3 class="text-center"><%= link_to post.title, post %></h3>
+      <p>
+        <%= get_first_paragraph post.content %>
+        <%= link_to "Continue reading...", post %>
+      </p>
+      <p class="tag-links"><%= raw tag_links(post.all_tags) %></p>
+    </div>
+  <% end %>
 </div>

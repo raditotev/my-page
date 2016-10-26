@@ -1,25 +1,21 @@
+
 <div id="show-post">
-  <div class="row">
-    <div class="small-10 small-centered">
+  <div class="container">
     <div class="text-center" id="post-header">
       <h1><%= @post.title %></h1>
       <p><%= @post.created_at.strftime("%e %B, %Y") %></p>
     </div>
-      <div id="post-content">
+    <div id="post-content">
         <%= @post.content.html_safe %>
       </div>
-      <p id="post-tags">
-        <strong><%= fa_icon("tags 1x") %></strong>
-        <%= raw tag_links(@post.all_tags) %>
-      </p>
       <div id="post-comments">
         <h4>Comments</h4>
         <hr>
         <%= render 'comments/form' %>
       </div>
+      <hr>
       <div id="posted-comments">
         <%= render @comments %>
       </div>
-    </div>
   </div>
 </div>

@@ -11,6 +11,8 @@
 @import "about";
 @import "portfolio";
 @import "show_project";
+@import "blog";
+@import "show_post";
 
 
 
@@ -42,7 +44,16 @@
     font-size: 15px;
     text-transform: uppercase;
 }
+
+.active-link{
+  border-bottom: 2px solid $red !important;
+}
 // End Header
+
+#portfolio, #show-project, #blog, #show-post{
+  padding-top: 140px;
+  margin-bottom: 50px;
+}
 
 // Footer
 #footer {

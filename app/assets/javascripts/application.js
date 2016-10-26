@@ -15,6 +15,7 @@ $(function(){
   // Initialize wow effects
   wow.init();
 
+  //Show project name on mouse over
   $('.project-thumb').on({
     mouseenter: function(){
       $(this).animate({opacity: 0.8});
@@ -30,5 +31,11 @@ $(function(){
     }
   });
 
+  // Underline active link in navbar
+  var url = window.location;
+  $('.navbar-inverse .navbar-nav li a').filter(function() {
+      return this.href == url;
+  }).parent().addClass('active-link');
 });
+
 

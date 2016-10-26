@@ -1,0 +1,27 @@
+#show-post{
+  #post-header{
+
+  }
+  #post-content{
+    margin-top: 50px;
+    margin-bottom: 25px;
+  }
+  #post-comments{
+    margin-bottom: 25px;
+  }
+  #posted-comments{
+    h5{
+      margin-bottom: 5px;
+      float: pull-left;
+    }
+    span{
+      float: right;
+    }
+    .comment{
+      margin: 12.5px auto;
+    }
+  }
+  form{
+    max-width: 450px;
+  }
+}
