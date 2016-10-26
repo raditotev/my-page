@@ -11,8 +11,24 @@ var wow = new WOW ({
   mobile:       false,       // trigger animations on mobile devices (default is true)
 });
 
-
-$(document).ready(function(){
-
+$(function(){
+  // Initialize wow effects
   wow.init();
+
+  $('.project-thumb').on({
+    mouseenter: function(){
+      $(this).animate({opacity: 0.8});
+      $(this).children("span").show();
+    },
+    mouseleave: function(){
+      $(this).animate({opacity: 1});
+      $(this).children("span").hide();
+    },
+    click: function(){
+      $(this).animate({opacity: 1});
+      $(this).children("span").hide();
+    }
+  });
+
 });
+

@@ -1,0 +1,48 @@
+#portfolio{
+  min-height: 100vh;
+  padding-top: 140px;
+  margin-bottom: 50px;
+  .row h1{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  img{
+    height: 150px;
+    width: 300px;
+  }
+  .container{
+    min-height: calc(100vh - 235px);
+  }
+  .project-thumb{
+    position: relative;
+  }
+  span{
+    display: none;
+    @include dead-center();
+    font-weight: bold;
+    background-color: #000;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 2px;
+    a{
+      color: #fff;
+    }
+  }
+  @media (max-width: 991px){
+    img{
+      height: 120px;
+      width: 220px;
+    }
+    span{
+      display: inline-block;
+    }
+  }
+  @media (max-width: 767px){
+    img{
+      height: 150px;
+      width: 300px;
+      margin: 7px;
+    }
+  }
+}
