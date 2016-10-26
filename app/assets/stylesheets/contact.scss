@@ -1,0 +1,9 @@
+#contact{
+  min-height: 100vh;
+  .container{
+    min-height: calc(100vh - 140px);
+  }
+  .hidden{
+    display: none;
+  }
+}

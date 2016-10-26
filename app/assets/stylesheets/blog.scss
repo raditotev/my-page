@@ -1,13 +1,14 @@
-#blog-page{
+#blog{
   h1{
     margin-top: 0;
     margin-bottom: 50px;
+    opacity: 0.7;
   }
-  h3{
-    font-weight: bold;
-    a{
-      color: $blue;
-    }
+  h3 a{
+    color: #000;
+  }
+  p a{
+    color: $blue;
   }
   .container{
     margin: 12.5px auto;

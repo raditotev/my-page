@@ -13,6 +13,7 @@
 @import "show_project";
 @import "blog";
 @import "show_post";
+@import "contact";
 
 
 
@@ -50,7 +51,7 @@
 }
 // End Header
 
-#portfolio, #show-project, #blog, #show-post{
+#portfolio, #show-project, #blog, #show-post, #contact{
   padding-top: 140px;
   margin-bottom: 50px;
 }

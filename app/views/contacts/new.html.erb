@@ -1,41 +1,23 @@
 <% provide(:title, "Contact") %>
-<% provide(:id, "contact") %>
 
-<div class="row" id="contact-page">
-  <div class="small-10 small-centered medium-8 medium-centered">
-    <h3 class="text-center">Send message</h3>
-    <%= form_for(@contact, remote: true) do |f| %>
-    <% if @contact.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-        <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-    <% end %>
 
-    <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+<div id="contact">
+  <div class="container vertical-center">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h3 class="text-center">Send message</h3>
+      <%= simple_form_for(@contact, remote: true) do |f| %>
+
+        <%= f.input :name %>
+        <%= f.input :email, as: :email %>
+        <%= f.input :message, as: :text , input_html: {rows: 4} %>
+        <%= f.input :nickname, label_html: { class: "hidden" }, input_html: {class: 'hidden'} %>
+
+        <%= f.button :submit, "Send" %>
+
+      <% end %>
     </div>
-    <div class="field">
-      <%= f.label :email %><br>
-      <%= f.text_field :email %>
-    </div>
-    <div class="field">
-      <%= f.label :message %><br>
-      <%= f.text_area :message %>
-    </div>
-    <div class="field">
-      <div class= "hidden">
-        <%= f.text_field :nickname, :hint => 'Leave this field blank!' %>
-      </div>
-    </div>
-    <div class="actions">
-      <%= f.submit "Send", class: "button", id: "send_message" %>
-    </div>
-    <% end %>
+  </div>
   </div>
 </div>
 
