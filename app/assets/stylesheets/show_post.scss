@@ -1,15 +1,19 @@
 #show-post{
-  #post-header{
-
-  }
+  position: relative;
   #post-content{
     margin-top: 50px;
     margin-bottom: 25px;
   }
-  #post-comments{
-    margin-bottom: 25px;
+  #post-tags{
+    .fa, a{
+      color: $blue;
+    }
+  }
+  #comments-section{
+    margin-top: 25px;
   }
   #posted-comments{
+    margin-bottom: 25px;
     h5{
       margin-bottom: 5px;
       float: pull-left;
@@ -19,7 +23,16 @@
     }
     .comment{
       margin: 12.5px auto;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      padding: 0 15px;
+      h4{
+        margin-bottom: 1em;
+      }
     }
+  }
+  #post-comment{
+    margin-top: 25px auto;
   }
   form{
     max-width: 450px;

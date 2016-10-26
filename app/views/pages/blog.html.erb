@@ -4,6 +4,12 @@
 <div id="blog">
   <h1 class="text-center">Articles</h1>
 
+<% if @tag %>
+  <h3 class="text-center">
+    Posts with tag <span><%= @tag %></span>
+  </h3>
+  <hr>
+<% end %>
   <% @posts.each do |post| %>
     <div class="container">
       <h3 class="text-center"><%= link_to post.title, post %></h3>

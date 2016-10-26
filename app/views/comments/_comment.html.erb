@@ -1,9 +1,12 @@
 <% if comment.valid? %>
-<div class="comment" id="comment-<%= comment.id %>">
-<% if current_admin %>
-    <span><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %></span>
-  <% end %>
-  <h4><strong><%= comment.author %></strong></h4>
-  <p><%= comment.content %></p>
-</div>
+  <div class="comment" id="comment-<%= comment.id %>">
+  <% if current_admin %>
+      <span><%= link_to 'Delete', [@post, comment], method: :delete, data: { confirm: "Are you sure?" }, remote: true %></span>
+    <% end %>
+    <h4>
+      <strong><%= comment.author %></strong><br>
+      <small><%= comment.created_at.strftime("%b %Y") %></small>
+    </h4>
+    <p><%= comment.content %></p>
+  </div>
 <% end %>

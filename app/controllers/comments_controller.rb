@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     if @comment.save
       respond_to do |format|
         format.html { redirect_to @post, flash: { success: "Comment created" } }
-        format.js
+        format.js { flash.now[:success] = "Comment created." }
       end
       send_email @comment
     else

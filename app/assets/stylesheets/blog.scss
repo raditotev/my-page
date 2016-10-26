@@ -1,11 +1,21 @@
 #blog{
+  min-height: calc(100vh - 140px);
   h1{
     margin-top: 0;
     margin-bottom: 50px;
     opacity: 0.7;
   }
-  h3 a{
-    color: #000;
+  h3 {
+    a{
+      color: #000;
+    }
+    span{
+      color: $blue;
+    }
+
+  }
+  hr{
+    width: 50%;
   }
   p a{
     color: $blue;
@@ -18,8 +28,5 @@
     &:last-of-type{
       margin-bottom: 0;
     }
-  }
-  .tag-links a{
-    color: $blue;
   }
 }

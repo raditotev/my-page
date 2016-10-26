@@ -51,6 +51,12 @@
 }
 // End Header
 
+#notices{
+  position: fixed;
+  top: 140px;
+  left: 0;
+}
+
 #portfolio, #show-project, #blog, #show-post, #contact{
   padding-top: 140px;
   margin-bottom: 50px;

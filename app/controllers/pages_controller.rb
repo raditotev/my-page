@@ -14,6 +14,7 @@ class PagesController < ApplicationController
   def blog
     if params[:tag]
       @posts = Post.tagged_with(params[:tag])
+      @tag = params[:tag]
     else
       @posts = Post.all
     end

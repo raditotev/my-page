@@ -1,3 +1,4 @@
+<% provide(:title, @post.title) %>
 
 <div id="show-post">
   <div class="container">
@@ -6,16 +7,18 @@
       <p><%= @post.created_at.strftime("%e %B, %Y") %></p>
     </div>
     <div id="post-content">
-        <%= @post.content.html_safe %>
-      </div>
-      <div id="post-comments">
-        <h4>Comments</h4>
-        <hr>
-        <%= render 'comments/form' %>
-      </div>
-      <hr>
-      <div id="posted-comments">
-        <%= render @comments %>
-      </div>
+      <%= @post.content.html_safe %>
+    </div>
+    <p id="post-tags">
+      <strong><%= fa_icon("tags 1x") %></strong>
+      <%= raw tag_links(@post.all_tags) %>
+    </p>
+    <h4 id="comments-section">Comments</h4>
+    <div id="posted-comments">
+      <%= render @comments %>
+    </div>
+    <div id="post-comments">
+      <%= render 'comments/form' %>
+    </div>
   </div>
 </div>
