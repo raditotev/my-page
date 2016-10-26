@@ -10,9 +10,9 @@ feature "Blog page" do
   subject { page }
 
   it { is_expected.to have_title "Blog | Radi's Page" }
-  it { is_expected.to have_css "h1", text: "Blog" }
-  it { is_expected.to have_css "h5", text: "I hope you'll find my articles useful" }
-  it { is_expected.to have_css "h4", text: "Post Title" }
+  it { is_expected.to have_css "h1", text: "Articles" }
+  it { is_expected.to have_css "h3", text: "Post Title" }
+  it { is_expected.to have_link "Continue reading..." }
 
 
   scenario "has link to About" do

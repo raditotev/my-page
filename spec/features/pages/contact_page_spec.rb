@@ -9,7 +9,7 @@ feature "Contact page" do
   subject { page }
 
   it { is_expected.to have_title "Contact | Radi's Page" }
-  it { is_expected.to have_css "h1", text: "Contact" }
+  it { is_expected.to have_css "h3", text: "Send message" }
 
 
 

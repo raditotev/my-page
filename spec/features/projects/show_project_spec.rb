@@ -10,8 +10,7 @@ feature "Show project" do
 
   subject { page }
 
-  it { is_expected.to have_css ".navbar" }
-  it { is_expected.to have_css "h1", text: "#{@project.title}" }
+  it { is_expected.to have_css "h1", text: @project.title}
   it { is_expected.to have_css "img[src='#{@project.screenshot.url}']" }
   it { is_expected.to have_link "Source code" }
   it { is_expected.to have_link "Live demo" }

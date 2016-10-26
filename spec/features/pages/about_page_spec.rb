@@ -9,8 +9,11 @@ feature "About page" do
   subject { page }
 
   it { is_expected.to have_title "About | Radi's Page" }
-  it { is_expected.to have_css "h1", text: "Radi Totev" }
-  it { is_expected.to have_css "h5", text: "Full Stack Developer" }
+  it { is_expected.to have_css "h1", text: "RADI'S SPACE" }
+  it { is_expected.to have_css "h1", text: "HEY, I'M RADI" }
+  it { is_expected.to have_css "h3", text: "Hi, and welcome to my page!" }
+  it { is_expected.to have_link "feel free to get in touch"}
+
 
 
   scenario "has link to Portfolio" do
