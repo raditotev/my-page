@@ -40,6 +40,8 @@ gem 'mail_form'
 gem 'friendly_id', '~> 5.1.0'
 # Forms
 gem 'simple_form'
+# Rails routes js helper
+gem "js-routes"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

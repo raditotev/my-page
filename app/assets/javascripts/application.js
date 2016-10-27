@@ -4,6 +4,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require wow.min
+//= require js-routes
 //= require_directory .
 
 var wow = new WOW ({
@@ -50,6 +51,10 @@ $(function(){
   $('.navbar-inverse .navbar-nav li a').filter(function() {
       return this.href == url;
   }).parent().addClass('active-link');
+
+  if(url.pathname == Routes.root_path()){
+    $('#nav li:first-child').addClass('active-link');
+  }
 
   // Email validation
   var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
