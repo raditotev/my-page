@@ -7,9 +7,9 @@
   <div class="container vertical-center">
     <div class="row">
       <% @projects.each do |project| %>
-        <div class="col-xs-12 col-sm-4 text-center project-thumb">
-        <span><%= link_to project.title, project %></span>
-        <%= link_to image_tag(project.screenshot.url(:medium)), project %>
+        <div class="col-xs-12 col-sm-4 text-center project-thumb" id="<%= project.slug %>">
+        <span><%= link_to project.title, app_path(project) %></span>
+        <%= link_to image_tag(project.screenshot.url(:medium)), app_path(project) %>
         </div>
       <% end %>
     </div>

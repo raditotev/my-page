@@ -15,7 +15,7 @@
     <div class="row">
       <div class="col-xs-12">
         <p>
-          <%= @project.description %>
+          <%= raw sanitize(simple_format(@project.description), :tags => %w(p br)) %>
         </p>
       </div>
     </div>

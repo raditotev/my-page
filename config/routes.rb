@@ -8,11 +8,6 @@ Rails.application.routes.draw do
   end
   resources :projects, except: [:index, :edit, :new]
   resources "contacts", only: :create
-  get 'contact' => 'contacts#new', as: :contact
-  get 'about' => 'pages#about'
-  get 'portfolio' => 'pages#portfolio'
-  get 'blog' => 'pages#blog'
-  get 'tags/:tag' => 'pages#blog', as: :tag
 
   devise_for :admin, only: :sessions
 
@@ -25,6 +20,17 @@ Rails.application.routes.draw do
   get 'admin/posts/new' => 'posts#new', as: :new_post
   get 'admin/posts/:id/edit' => 'posts#edit', as: :edit_post
   get 'download_cv' => 'pages#download_cv'
+
+  #Public routes
+  get 'contact' => 'contacts#new', as: :contact
+  get 'about' => 'pages#about'
+  get 'portfolio' => 'pages#portfolio'
+  get 'portfolio/:id' => 'projects#show', as: :app
+  get 'blog' => 'pages#blog'
+  get 'blog/:id' => 'posts#show', as: :article
+  get 'tags/:tag' => 'pages#blog', as: :tag
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
