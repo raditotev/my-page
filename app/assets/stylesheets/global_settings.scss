@@ -10,3 +10,9 @@ a, a:hover, a:active, a:focus, a:link{
   outline: 0;
   text-decoration: none;
 }
+
+.alert-error{
+  background: $state-danger-bg;
+  color: $state-danger-text;
+  border: 1px solid $state-danger-border;
+}

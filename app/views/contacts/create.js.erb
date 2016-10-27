@@ -1,8 +1,6 @@
 
-  $("#notice").html("<%= j render partial: "shared/flash_messages" %>")
-  $("#notice").fadeIn()
+  $("#notices").html("<%= j render partial: 'shared/flash_messages' %>");
+  $("#notices").fadeIn()
                       .delay(3000)
-                      .fadeOut()
-  $('#contact_name').val('')
-  $('#contact_email').val('')
-  $('#contact_message').val('')
+                      .fadeOut();
+  $("form")[0].reset();

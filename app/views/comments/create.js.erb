@@ -1,3 +1,6 @@
 $('#posted-comments').append("<%=j render 'comments/comment', post: @post, comment: @comment %>");
-$("#notice").html('<div class="alert-error"><%= flash[:error] %></div>');
 $("form")[0].reset();
+$("#notices").html("<%= j render partial: 'shared/flash_messages' %>");
+$("#notices").fadeIn()
+                      .delay(3000)
+                      .fadeOut();

@@ -1,7 +1,7 @@
     <% flash.each do |key, value| %>
       <% unless value.blank? %>
-      <div class="alert-<%= key %>">
-        <p><%= value %></p>
-      </div>
+        <div class="alert alert-<%= key %>">
+          <p class="text-center"><%= value %></p>
+        </div>
       <% end %>
     <% end %>

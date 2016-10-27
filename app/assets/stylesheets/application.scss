@@ -52,9 +52,12 @@
 // End Header
 
 #notices{
+  width: 50%;
   position: fixed;
-  top: 140px;
-  left: 0;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
 }
 
 #portfolio, #show-project, #blog, #show-post, #contact{
