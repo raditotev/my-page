@@ -4,6 +4,6 @@
   <%= f.input :email, placeholder: "Your email (optional/ not public)" %>
   <%= f.input :content, placeholder: "Your comment...", as: :text, input_html: {rows: 4} %>
 
-  <%= f.button :submit %>
+  <%= f.button :submit,  "Comment", disabled: "true", id: "create-comment" %>
 
 <% end %>

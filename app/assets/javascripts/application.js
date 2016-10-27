@@ -36,6 +36,48 @@ $(function(){
   $('.navbar-inverse .navbar-nav li a').filter(function() {
       return this.href == url;
   }).parent().addClass('active-link');
+
+  // Email validation
+  var re = /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
+  var validEmail = false;
+
+  function validateEmail (target){
+    $(target).change(function(){
+      var match = re.test($(this).val());
+      if (!match) {
+        var selector = (target == '#contact_from') ? 'label:first' : 'label:eq(1)'
+        $(selector).append("<span id='invalid-email'> Please enter valid email</span>")
+        $(this).addClass("incorrect");
+        validEmail = false;
+      } else {
+        $('#invalid-email').remove();
+        $(this).removeClass("incorrect");
+        validEmail = true;
+      }
+    });
+  }
+  validateEmail("#contact_email");
+
+  // Disable Contact form button
+  $("#contact_name, #contact_email, #contact_message").on("change keyup", function(){
+    if($("#contact_name").val() != "" && $("#contact_email").val() != ""
+                                                          && $("#contact_message").val() !=""
+                                                          && validEmail)
+    {
+      $("#send_message").prop("disabled", false);
+    } else {
+      $("#send_message").prop("disabled", true);
+    }
+  });
+
+  // Disable Comment form button
+  $("#comment_content").keyup(function(){
+    if($("#comment_content").val() != ""){
+      $("#create-comment").prop("disabled", false);
+    } else {
+      $("#create-comment").prop("disabled", true);
+    }
+  });
 });
 
 
