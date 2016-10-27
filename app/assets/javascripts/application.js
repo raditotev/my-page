@@ -11,6 +11,20 @@ var wow = new WOW ({
   mobile:       false,       // trigger animations on mobile devices (default is true)
 });
 
+ //Hide flash messages after 3s
+$(function() {
+  var flashCallback;
+  flashCallback = function() {
+    return $("#notice").fadeOut();
+  };
+  $("#notice").bind('click', (function(_this) {
+    return function(ev) {
+      return $("#notice").fadeOut();
+    };
+  })(this));
+  return setTimeout(flashCallback, 3000);
+});
+
 $(function(){
   // Initialize wow effects
   wow.init();

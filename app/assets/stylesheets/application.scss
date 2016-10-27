@@ -182,3 +182,9 @@
   @include flex-direction(column);
   @include justify-content(center);
 }
+
+@media (max-width: 468px){
+  #notices{
+    width: 80%;
+  }
+}
