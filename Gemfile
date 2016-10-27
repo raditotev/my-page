@@ -33,7 +33,6 @@ gem 'aws-sdk', '~> 2.3'
 # WYSIWYG
 gem "ckeditor"
 #Styling
-gem 'foundation-rails'
 gem "font-awesome-rails"
 #Mail generator
 gem 'mail_form'
