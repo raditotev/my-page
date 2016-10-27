@@ -17,8 +17,9 @@ class PagesController < ApplicationController
 
   def download_cv
     send_file(
-      "#{Rails.root}/public/radi_cv.pdf",
+      "#{Rails.root}/public/documents/radi_cv.pdf",
       filename: "radi_cv.pdf",
+      disposition: 'inline',
       type: "application/pdf"
     )
   end
