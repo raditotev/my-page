@@ -1,5 +1,6 @@
 $('#posted-comments').append("<%=j render 'comments/comment', post: @post, comment: @comment %>");
 $("form")[0].reset();
+$('#create-comment').prop('disabled', true);
 $("#notices").html("<%= j render partial: 'shared/flash_messages' %>");
 $("#notices").fadeIn()
                       .delay(3000)

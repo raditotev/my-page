@@ -34,6 +34,15 @@
   #post-comment{
     margin-top: 25px auto;
   }
+  pre{
+    background-color: #23241f;
+    padding: 0;
+    word-break: normal;
+    word-wrap: normal;
+    code{
+      white-space: pre;
+    }
+  }
   form{
     max-width: 450px;
   }
