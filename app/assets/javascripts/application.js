@@ -16,11 +16,11 @@ var wow = new WOW ({
 $(function() {
   var flashCallback;
   flashCallback = function() {
-    return $("#notice").fadeOut();
+    return $("#notices").fadeOut();
   };
-  $("#notice").bind('click', (function(_this) {
+  $("#notices").bind('click', (function(_this) {
     return function(ev) {
-      return $("#notice").fadeOut();
+      return $("#notices").fadeOut();
     };
   })(this));
   return setTimeout(flashCallback, 3000);
