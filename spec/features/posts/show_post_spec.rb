@@ -15,7 +15,7 @@ feature "Show post" do
   subject { page }
 
   it { is_expected.to have_css "h1", text: "#{@post.title}" }
-  it { is_expected.to have_css "p", text: "#{@post.created_at.strftime('%e %B, %Y')}" }
+  it { is_expected.to have_css "p", text: "#{@post.created_at.strftime('%e %B, %Y').strip}" }
   it { is_expected.to have_css "#post-content", text: "#{@post.content}" }
   it { is_expected.to have_css "h4", text: "Comments" }
   it { is_expected.to have_css "h4", text: "#{@comment.author}" }
