@@ -13,7 +13,7 @@ describe AdminController do
   describe " GET #home" do
     it "should load home page when admin signed in" do
       get :home
-      expect(response).to be_success
+      expect(response).to be_successful
       expect(response).to render_template(:home)
     end
 

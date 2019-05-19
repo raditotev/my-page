@@ -9,14 +9,14 @@ RSpec.describe PagesController, type: :controller do
   describe "GET #about" do
     before {get :about}
 
-    it {is_expected.to be_success}
+    it {is_expected.to be_successful}
     it {is_expected.to render_template :about}
   end
 
   describe "GET #portfolio" do
     before {get :portfolio}
 
-    it {is_expected.to be_success}
+    it {is_expected.to be_successful}
     it {is_expected.to render_template :portfolio}
 
 
@@ -37,7 +37,7 @@ RSpec.describe PagesController, type: :controller do
   describe "GET #blog" do
     before {get :blog}
 
-    it {is_expected.to be_success}
+    it {is_expected.to be_successful}
     it {is_expected.to render_template :blog}
 
     it "assigns all posts as @posts" do
