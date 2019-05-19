@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   after_action :mark_comments_as_read, only: :comments
 
   def home
-    @unread_comments = Comment.where(read: false).count
+    @unread_comments = Comment.where(read: 0).count
   end
 
   def projects
@@ -21,6 +21,6 @@ class AdminController < ApplicationController
   private
 
   def mark_comments_as_read
-    @comments.each { |comment| comment.update_attributes(read: true) }
+    @comments.each { |comment| comment.update_attributes(read: 1) }
   end
 end
