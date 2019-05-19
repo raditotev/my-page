@@ -26,7 +26,7 @@ describe AdminController do
     it "assigns unread comments as @unread_comments" do
       post = create(:post)
       comment = create(:comment, post: post)
-      get :home, {}, valid_session
+      get :home, params: {}, session: valid_session
       expect(assigns(:unread_comments)).to eq 1
     end
   end
@@ -41,7 +41,7 @@ describe AdminController do
 
     it "assigns all projects as @projects" do
       project = create(:project)
-      get :projects, valid_session
+      get :projects, session: valid_session
       expect(assigns(:projects)).to eq([project])
     end
   end
@@ -56,7 +56,7 @@ describe AdminController do
 
     it "assigns all posts as @posts" do
       post = create(:post)
-      get :posts, valid_session
+      get :posts, session: valid_session
       expect(assigns(:posts)).to eq([post])
     end
   end
