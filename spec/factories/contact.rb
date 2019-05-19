@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
     factory :contact do
-      name "John Doe"
-        email "john@mail.com"
-        message "Message text"
+      name { "John Doe" }
+        email { "john@mail.com" }
+        message { "Message text" }
     end
 end

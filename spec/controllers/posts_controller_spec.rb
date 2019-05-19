@@ -6,7 +6,7 @@ RSpec.describe PostsController, type: :controller do
 
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:admin]
-    @admin = FactoryGirl.create :admin
+    @admin = FactoryBot.create :admin
     sign_in @admin
   end
 
