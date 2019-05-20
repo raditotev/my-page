@@ -31,7 +31,7 @@ gem "paperclip"
 # Amazon Web Services
 gem 'aws-sdk'
 # WYSIWYG
-gem "ckeditor"
+gem "ckeditor", '4.1.3'
 #Styling
 gem "font-awesome-rails"
 #Mail generator

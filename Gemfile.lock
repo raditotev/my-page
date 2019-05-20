@@ -765,20 +765,22 @@ GEM
       sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.1)
-    capybara (3.20.1)
+    capybara (3.20.2)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.2)
-      uglifier
       xpath (~> 3.2)
     childprocess (1.0.1)
       rake (< 13.0)
-    ckeditor (5.0.0)
+    ckeditor (4.1.3)
+      cocaine
       orm_adapter (~> 0.5.0)
     climate_control (0.2.0)
+    cocaine (0.6.0)
+      terrapin (= 0.6.0)
     coffee-rails (5.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 5.2.0)
@@ -1012,7 +1014,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   capybara
-  ckeditor
+  ckeditor (= 4.1.3)
   coffee-rails
   database_cleaner
   devise
