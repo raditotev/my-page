@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post < ApplicationRecord
   before_destroy :delete_tags
 
   extend FriendlyId
