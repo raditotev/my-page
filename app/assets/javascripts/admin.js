@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
 //= require ckeditor/init
 //= require ckeditor/config
 //= require ckeditor/plugins/codesnippet/plugin
