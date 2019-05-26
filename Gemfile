@@ -2,15 +2,15 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '5.2.0'
 #Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -21,23 +21,23 @@ gem 'jquery-ui-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Authenication
 gem 'devise'
 #Image upload
-gem "paperclip", "~> 5.0.0.beta1"
+gem "paperclip"
 # Amazon Web Services
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk'
 # WYSIWYG
-gem "ckeditor"
+gem "ckeditor", '4.1.3'
 #Styling
 gem "font-awesome-rails"
 #Mail generator
 gem 'mail_form'
 # Friendly URL
-gem 'friendly_id', '~> 5.1.0'
+gem 'friendly_id'
 # Forms
 gem 'simple_form'
 # Rails routes js helper
@@ -54,13 +54,14 @@ gem "js-routes"
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.6'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'selenium-webdriver'
+  gem 'rails-controller-testing'
 end
 
 group :test do
@@ -70,12 +71,14 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   # Email preview in dvelopment
   gem "letter_opener"
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rubocop-rspec'
+  gem 'rubocop-performance'
 end
 
 group :production do
@@ -87,4 +90,4 @@ group :production do
   gem 'puma'
 end
 
-ruby "2.2.1"
+ruby "2.5.1"

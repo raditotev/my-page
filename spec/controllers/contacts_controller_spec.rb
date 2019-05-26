@@ -6,7 +6,7 @@ RSpec.describe ContactsController, type: :controller do
 
   describe "GET #new" do
     before :each do
-      get :new, {}, valid_session
+      get :new, params: {}, session: valid_session
     end
     subject{response}
 
@@ -27,7 +27,7 @@ RSpec.describe ContactsController, type: :controller do
 
     context "with valid details" do
       before :each do
-        post :create, {contact: attributes_for(:contact)}, valid_session
+        post :create, params: {contact: attributes_for(:contact)}, session: valid_session
       end
 
       it "assigns a newly created contact as @contact" do
@@ -41,7 +41,7 @@ RSpec.describe ContactsController, type: :controller do
 
     context "with invalid details" do
       before :each do
-        post :create, {contact: attributes_for(:contact, name: nil, email: nil, message: nil)}, valid_session
+        post :create, params: {contact: attributes_for(:contact, name: nil, email: nil, message: nil)}, session: valid_session
       end
 
       it "assigns a newly created but unsaved contact as @contact" do
