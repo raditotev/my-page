@@ -1,7 +1,7 @@
 <% provide(:title, "Comments") %>
 
 <% @comments.each do |comment| %>
-  <div class="read-<%= comment.read %>">
+  <div class="read-<%= comment.read > 0 ? true : false %>">
     <h3><%= link_to comment.post.title, comment.post %></h3>
     <strong>Author: <%= comment.author %></strong><br>
     <strong><%= comment.email %></strong><br>
