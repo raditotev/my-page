@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_19_123605) do
+ActiveRecord::Schema.define(version: 202205051707002) do
 
-  create_table "admins", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "admins", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -29,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "ckeditor_assets", force: :cascade do |t|
+  create_table "ckeditor_assets", id: :serial, force: :cascade do |t|
     t.string "data_file_name", null: false
     t.string "data_content_type"
     t.integer "data_file_size"
@@ -44,7 +47,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", id: :serial, force: :cascade do |t|
     t.string "author"
     t.string "email"
     t.string "content"
@@ -55,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "friendly_id_slugs", force: :cascade do |t|
+  create_table "friendly_id_slugs", id: :serial, force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
@@ -67,7 +70,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
@@ -76,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
-  create_table "projects", force: :cascade do |t|
+  create_table "projects", id: :serial, force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
@@ -91,7 +94,7 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["slug"], name: "index_projects_on_slug", unique: true
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "post_id"
     t.integer "tag_id"
     t.datetime "created_at", null: false
@@ -100,11 +103,14 @@ ActiveRecord::Schema.define(version: 2019_05_19_123605) do
     t.index ["tag_id"], name: "index_taggings_on_tag_id"
   end
 
-  create_table "tags", force: :cascade do |t|
+  create_table "tags", id: :serial, force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tags_on_name"
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "taggings", "posts"
+  add_foreign_key "taggings", "tags"
 end
